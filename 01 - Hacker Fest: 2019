@@ -1,9 +1,80 @@
 
-## 01 - Hacker Fest: 2019
+
+# 01 - Hacker Fest: 2019 #
+Link para o VulnHub
 https://www.vulnhub.com/entry/hacker-fest-2019,378/
-set VM your NAT lab.
+Set VM para seu ambiente NAT.
 
 1. Reconhecimento (Recon)
-Execute uma varredura com Nmap para identificar portas abertas.
-nmap -sV -v -Pn  <host> / nmap -sC -A -p- -Pn <host>
+Network Scanning:
+Utilizou-se o arp-scan para descobrir dispositivos ativos na rede local e coletar os pares IP-MAC.
+Comandos possíveis:
+
+bash
+
+arp-scan --localnet 
+sudo arp-scan -l
+netdiscover -r <host>
+nmap -sn <host>  # Escolha o comando que preferir.
+IP encontrado: 10.10.10.5
+Teste de Navegador:
+Não pense demais.
+
+Acesse: http://10.10.10.5
+Resultados:
+
+Encontrado: WordPress.
+2. Scanning: Objetivo: Identificar vulnerabilidades presentes no sistema ou rede.
+Escaneamento de portas e serviços:
+
+bash
+
+nmap -sV -v -Pn <host>
+nmap -sC -A -p- -Pn <host>  # Para descobrir portas abertas e serviços em execução.
+Resultados:
+
+Encontrada a porta aberta: 80 (HTTP)
+WPScan:
+Utilizado para escanear sites WordPress.
+Comandos:
+
+bash
+
+wpscan --url http://10.10.10.5  # Para escanear o site WordPress.
+wpscan --url http://10.10.10.5 --enumerate u  # Para enumerar usuários.
+Resultados:
+
+Plugin do WordPress: Google.
+3. Exploração
+Exploit-DB / Searchsploit:
+Pesquise por "Webmin" ou "Google Maps".
+Webmin CVE-2019-15107:
+Exploração de vulnerabilidade de SQLi em plugin do Google Maps no WordPress.
+
+Metasploit (msfconsole):
+O Metasploit Framework é utilizado para explorar vulnerabilidades conhecidas e obter acesso.
+Comandos:
+
+bash
+
+search Webmin  # Ou Google Maps.
+use <número do exploit>
+info  # Para mais detalhes sobre a vulnerabilidade.
+options  # Para ver as configurações.
+set RHOSTS 10.10.10.5
+set RPORT 80
+exploit  # Para explorar a vulnerabilidade.
+4. Escalada de Privilégios
+Comandos para escalar privilégios:
+
+bash
+
+pwd
+whoami
+sudo -l  # Para verificar permissões de sudo.
+Procura pela flag:
+
+bash
+
+find flag.txt  # Caso haja uma flag presente.
 
