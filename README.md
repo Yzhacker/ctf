@@ -49,7 +49,7 @@ need to created a VM and used ISO as disk
 ## 03 - Droopy: v0.2
 https://www.vulnhub.com/entry/droopy-v02,143/
 
-## 04  `digitalworld.local: JOY`. 
+## 04 - `digitalworld.local: JOY`. 
 
 - https://www.vulnhub.com/entry/digitalworldlocal-joy,298/
 - set VM your NAT lab.
