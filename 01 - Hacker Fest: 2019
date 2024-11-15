@@ -1,1 +1,9 @@
 
+## 01 - Hacker Fest: 2019
+https://www.vulnhub.com/entry/hacker-fest-2019,378/
+set VM your NAT lab.
+
+1. Reconhecimento (Recon)
+Execute uma varredura com Nmap para identificar portas abertas.
+nmap -sV -v -Pn  <host> / nmap -sC -A -p- -Pn <host>
+
