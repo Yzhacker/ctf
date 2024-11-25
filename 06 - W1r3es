@@ -1,1 +1,47 @@
 
+CTF Walkthrough Guide
+1. Setup Instructions
+Setup your virtual machine and network configuration.
+
+
+2. Reconnaissance (Recon)
+Perform Nmap scan to identify open ports and services.
+Analyze the services running on the target machine.
+
+
+3. Enumeration
+Enumerate services such as FTP, HTTP, SSH, etc.
+Look for valuable files and potential weaknesses.
+
+
+4. Vulnerability Identification
+Identify potential vulnerabilities based on the reconnaissance and enumeration.
+Search for public exploits, misconfigurations, or weak service versions.
+
+
+5. Exploitation
+Exploit vulnerabilities to gain access to the system.
+Use tools like Metasploit, Hydra, or custom scripts.
+
+
+6. Privilege Escalation
+Attempt to escalate privileges from a limited user to root.
+Explore file permissions, configuration files, and environment variables.
+
+
+7. Post-Exploitation
+Maintain access, collect additional flags, or prepare for further exploitation.
+Investigate further vulnerabilities and opportunities for additional access.
+
+
+8. Flag Collection
+Locate and capture flags (usually text files or output from certain commands).
+Flag collection might be in different formats (e.g., flag.txt or output from a successful command).
+
+
+9. Conclusion
+Summarize your successful exploitation.
+Review any lessons learned or tools/techniques that were effective
+
+
+
