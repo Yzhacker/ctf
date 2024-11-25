@@ -149,7 +149,7 @@ Example Commands:
 ---  
 **Happy hacking!** 🎯  
 
-
+python -c "import pty; pty.spawn('/bin/bash')"  
 
                                                               
 
