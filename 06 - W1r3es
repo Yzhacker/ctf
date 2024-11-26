@@ -17,10 +17,11 @@ Scan Results: bash
 
 Service Info:
 
-Hosts: The, JOY.localdomain, 127.0.1.1, JOY
+Hosts: 
 OS: Linux
 CPE: cpe:/o:linux:linux_kernel
-
+open 80 http
+open 22 ssh
 
 3. Enumeration
 Enumerate services such as FTP, HTTP, SSH, etc.
