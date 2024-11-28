@@ -153,6 +153,8 @@ shell -t /bin/bash
 
 python -c "import pty; pty.spawn('/bin/bash')"  
 
+python3 -c "import pty; pty.spawn('/bin/bash')"  correct
+
 python3 -c 'import pty; pty.spawn(/"bin/bash")'
 
 find / -perm -u=s -type f 2>/dev/null
