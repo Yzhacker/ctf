@@ -1,5 +1,9 @@
 https://www.vulnhub.com/entry/ha-wordy,363/
 
+ Walkthrough
+https://www.youtube.com/watch?v=Sk4XWFJruVk&list=PLHBDBcFA_l_WBcUJWf8cp5BaPsUkquRQU&index=11
+
+https://www.hackingarticles.in/ha-wordy-vulnhub-walkthrough/
 
 CTF Walkthrough Guide
 1. Setup Instructions
@@ -53,7 +57,7 @@ http://10.10.10.6/wordpress/wp-content/uploads/
 Exploit vulnerabilities to gain access to the system.
 Use tools like Metasploit, Hydra, or custom scripts.
 
-
+Here we have 3 flags more them away to get it.
 
 
 6. Privilege Escalation
