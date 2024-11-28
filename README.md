@@ -157,6 +157,8 @@ python3 -c 'import pty; pty.spawn(/"bin/bash")'
 
 find / -perm -u=s -type f 2>/dev/null
 
+find . -perm /6000
+
                                                               
 
 
