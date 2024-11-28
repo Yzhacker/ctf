@@ -28,13 +28,13 @@ Hosts:
 Enumerate services such as FTP, HTTP, SSH, etc.
 Look for valuable files and potential weaknesses.
 
- - dirb http://10.10.10.6 -d /usr/share/wordlists/dirb/big.txt
+ - dirb http://10.10.10.7 -d /usr/share/wordlists/dirb/big.txt
+ - nikto -h http://10.10.10.7
+ - gobuster dir -u http://10.10.10.6 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt 
 
-- gobuster dir -u http://10.10.10.6 -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt 
+ dirb is more eficient but les organize but on this case gobuster les eficiente more organize and faster.
 
-dirb is more eficient but les organize but on this case gobuster les eficiente more organize and faster.
-
-- wpscan --url http://10.10.10.14
+ - wpscan --url http://10.10.10.14/wordpress --enumerate p
 with wpscan you can find vulnerability on wordpress
 
 4. Vulnerability Identification
