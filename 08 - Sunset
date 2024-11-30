@@ -1,1 +1,89 @@
 
+https://www.vulnhub.com/entry/sunset-1,339/
+
+ Walkthrough
+https://www.youtube.com/watch?v=Sk4XWFJruVk&list=PLHBDBcFA_l_WBcUJWf8cp5BaPsUkquRQU&index=11
+
+https://www.hackingarticles.in/ha-wordy-vulnhub-walkthrough/
+
+CTF Walkthrough Guide
+1. Setup Instructions
+Setup your virtual machine and network configuration.
+
+
+2. Reconnaissance (Recon)
+Perform Nmap scan to identify open ports and services.
+Analyze the services running on the target machine.
+
+netdiscover -r <10.10.10.0/24>
+
+nmap -sV -v -Pn <10.10.10.7>
+nmap -sC -A -p- -Pn <10.10.10.7>
+
+Scan Results: 
+
+Service Info:
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     pyftpdlib 1.5.5
+22/tcp open  ssh     OpenSSH 7.9p1 Debian 10 (protocol 2.0)
+
+
+3. Enumeration
+Enumerate services such as FTP, HTTP, SSH, etc.
+Look for valuable files and potential weaknesses.
+
+ftp 10.10.10.8 anonymous okay
+ssh <>@10.10.10.8 need passward and user
+
+4. Vulnerability Identification
+Identify potential vulnerabilities based on the reconnaissance and enumeration.
+Search for public exploits, misconfigurations, or weak service versions.
+
+server has fpt anonymous user and has file with hashes of passwd
+ftp 10.10.10.8 anonymous 
+password no needed
+ls backup 
+get backup
+
+***************
+cat backup 
+we can see users and hashes, now we can use john/hashcat to find password, but for dont take so longe I just pickup one, sunset
+
+echo "conteúdo do arquivo/sunset-hashs" > novo_nome.txt
+vin sunset/hashe
+
+john <named file with hashes>
+john --show <named file with hashes> case you alredy has brokend
+now we have user an password of ssh
+ 
+
+5. Exploitation
+Exploit vulnerabilities to gain access to the system.
+Use tools like Metasploit, Hydra, or custom scripts.
+
+ssh sunset@10.10.10.6
+sudo -l
+
+
+
+6. Privilege Escalation
+Attempt to escalate privileges from a limited user to root.
+Explore file permissions, configuration files, and environment variables.
+
+No need
+
+
+7. Post-Exploitation
+Maintain access, collect additional flags, or prepare for further exploitation.
+Investigate further vulnerabilities and opportunities for additional access.
+
+
+
+8. Flag Collection
+Locate and capture flags (usually text files or output from certain commands).
+Flag collection might be in different formats (e.g., flag.txt or output from a successful command).
+
+
+9. Conclusion
+Summarize your successful exploitation.
+Review any lessons learned or tools/techniques that were effective
