@@ -111,6 +111,8 @@ no need
 Locate and capture flags (usually text files or output from certain commands).
 Flag collection might be in different formats (e.g., flag.txt or output from a successful command).
 
+cd /root
+flag.txt
 
 9. Conclusion
 Summarize your successful exploitation.
