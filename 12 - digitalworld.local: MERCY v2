@@ -1,0 +1,38 @@
+Netdiscover -r 10.10.10.0/24
+10.10.10.10.12
+
+nmap -sV -Pn 10.10.10.12
+
+PORT     STATE    SERVICE     VERSION
+22/tcp   filtered ssh
+53/tcp   open     domain      ISC BIND 9.9.5-3ubuntu0.17 (Ubuntu Linux)
+80/tcp   filtered http
+110/tcp  open     pop3        Dovecot pop3d
+139/tcp  open     netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+143/tcp  open     imap        Dovecot imapd (Ubuntu)
+445/tcp  open     netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+993/tcp  open     ssl/imap    Dovecot imapd (Ubuntu)
+995/tcp  open     ssl/pop3    Dovecot pop3d
+8080/tcp open     http        Apache Tomcat/Coyote JSP engine 1.1
+MAC Address: 08:00:27:27:96:06 (Oracle VirtualBox virtual NIC)
+Service Info: Host: MERCY; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+nbtscan -v -r 10.10.10.19
+Doing NBT name scan for addresses from 10.10.10.19
+
+
+NetBIOS Name Table for Host 10.10.10.19:
+
+Incomplete packet, 227 bytes long.
+Name             Service          Type             
+----------------------------------------
+MERCY            <00>             UNIQUE
+MERCY            <03>             UNIQUE
+MERCY            <20>             UNIQUE
+__MSBROWSE__  <01>              GROUP
+WORKGROUP        <00>              GROUP
+WORKGROUP        <1d>             UNIQUE
+WORKGROUP        <1e>              GROUP
+
+enum4linux 10.10.10.19
