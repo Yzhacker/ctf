@@ -17,6 +17,15 @@ PORT     STATE    SERVICE     VERSION
 MAC Address: 08:00:27:27:96:06 (Oracle VirtualBox virtual NIC)
 Service Info: Host: MERCY; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
+vamos abrir o brouser na porta 8080
+achamos algo aqui
+ podemos ou tetnar um dirb ou achar o robots.txt
+
+olha achamos algo nele um base60
+
+    no terminal echo 'stringdobase64' ] base64 -d 
+achamos algo senha.
+agora vamos descobrir usuarios pra ela
 
 nbtscan -v -r 10.10.10.19
 Doing NBT name scan for addresses from 10.10.10.19
@@ -36,3 +45,24 @@ WORKGROUP        <1d>             UNIQUE
 WORKGROUP        <1e>              GROUP
 
 enum4linux 10.10.10.19
+
+arget ........... 10.10.10.19
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ========================================( Users on 10.10.10.19 )========================================
+                                                                                                                                  
+index: 0x1 RID: 0x3e8 acb: 0x00000010 Account: pleadformercy    Name: QIU       Desc:                                             
+index: 0x2 RID: 0x3e9 acb: 0x00000010 Account: qiu      Name:   Desc: 
+
+user:[pleadformercy] rid:[0x3e8]
+user:[qiu] rid:[0x3e9]
+
+smbclient \\\\10.10.10.19\\qiu -U qiu
+
+
+knock 10.10.10.19 159 27391 4
+
