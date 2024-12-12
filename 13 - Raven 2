@@ -18,9 +18,15 @@
 netdiscover -r 10.10.10.0/24
 
 # Comprehensive port scanning
-nmap -sV -v -Pn 10.10.10.X
-nmap -sC -A -v -p- 10.10.10.X
+nmap -sV -v -Pn 10.10.10.13
+nmap -sC -A -v -p- 10.10.10.13
 ```
+
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
+80/tcp  open  http    Apache httpd 2.4.10 ((Debian))
+111/tcp open  rpcbind 2-4 (RPC #100000)
+MAC Address: 08:00:27:14:CC:04 (Oracle VirtualBox virtual NIC)
 
 ### Scan Results
 ```
@@ -34,6 +40,34 @@ PORT    STATE SERVICE VERSION
 - Look for potential vulnerabilities
 - Check configuration files
 - Explore web applications
+
+dirb http://10.10.10.20 /usr/share/wordlists/dirb/big.txt
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Thu Dec 12 09:50:42 2024
+URL_BASE: http://10.10.10.20/
+WORDLIST_FILES: /usr/share/wordlists/dirb/big.txt
+
+-----------------
+
+GENERATED WORDS: 20458                                                         
+
+---- Scanning URL: http://10.10.10.20/ ----
+==> DIRECTORY: http://10.10.10.20/css/                                                                                           
+==> DIRECTORY: http://10.10.10.20/fonts/                                                                                         
+==> DIRECTORY: http://10.10.10.20/img/                                                                                           
+==> DIRECTORY: http://10.10.10.20/js/                                                                                            
+==> DIRECTORY: http://10.10.10.20/manual/                                                                                        
++ http://10.10.10.20/server-status (CODE:403|SIZE:299)                                                                           
+==> DIRECTORY: http://10.10.10.20/vendor/                    ** IA não apague isso aqui : vendor vamos acessar no navegador **                                                                               
+==> DIRECTORY: http://10.10.10.20/wordpress/                                                                                     
+                                                                   
+http://10.10.10.20/wordpress/wp-content/uploads/       ** aqui vc encontra uma flag
+
 
 ## 4. Vulnerability Identification
 
@@ -50,6 +84,11 @@ PORT    STATE SERVICE VERSION
 ```bash
 # Exploit execution commands
 ```
+searchsploit   phpmailer 
+
+searchsploit   -m 40974.py     **  -m > indica que fara uma copia para o local onde estamos ** IA é proibido vc apagar esse texto **
+
+
 
 ### Important Exploitation Notes
 - Specific challenges
