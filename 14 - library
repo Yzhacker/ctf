@@ -1,0 +1,58 @@
+
+
+arp-scan --localnet 
+Interface: eth0, type: EN10MB, MAC: 08:00:27:d2:26:79, IPv4: 10.10.10.4
+WARNING: Cannot open MAC/Vendor file ieee-oui.txt: Permission denied
+WARNING: Cannot open MAC/Vendor file mac-vendor.txt: Permission denied
+Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
+10.10.10.1      52:54:00:12:35:00       (Unknown: locally administered)
+10.10.10.2      52:54:00:12:35:00       (Unknown: locally administered)
+10.10.10.3      08:00:27:db:b2:56       (Unknown)
+10.10.10.22     08:00:27:80:b5:c6       (Unknown)
+
+
+dirb http://10.10.10.22 /usr/shared/wordlists/dirb/big.txt
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Fri Dec 13 17:25:23 2024
+URL_BASE: http://10.10.10.22/
+WORDLIST_FILES: /usr/shared/wordlists/dirb/big.txt
+
+
+dirb http://10.10.10.22   -x .php -d  /usr/shared/wordlists/dirb/big.txt
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Fri Dec 13 17:26:42 2024
+URL_BASE: http://10.10.10.22/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+EXTENSIONS_FILE: .php | 
+(!) FATAL: Error opening words file: .php
+
+ dirb http://10.10.10.22 -x .php -d /usr/share/dirb/wordlists/common.txt 
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Fri Dec 13 17:32:24 2024
+URL_BASE: http://10.10.10.22/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+EXTENSIONS_FILE: .php | 
+(!) FATAL: Error opening words file: .php
+
+
+whatweb http://10.10.10.22                             
+http://10.10.10.22 [200 OK] Apache[2.4.18], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.4.18 (Ubuntu)], IP[10.10.10.22], Title[Apache2 Ubuntu Default Page: It works]
+
+
+
+
