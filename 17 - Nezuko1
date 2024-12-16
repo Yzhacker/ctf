@@ -1,1 +1,17 @@
 
+nmap -sV -Pn -v 10.10.10.25 
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+13337/tcp open  ssl/http MiniServ 1.920 (Webmin httpd) obs -p-
+
+MAC Address: 08:00:27:E1:A5:C7 (Oracle VirtualBox virtual NIC)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+nmap -sV -sC -Pn -v -p- 10.10.10.25
+
+
+dirb http://10.10.10.25 -d /usr/shere/wordlists/dirb/big.txt  
+
+ http://10.10.10.25/robots.txt (CODE:200|SIZE:105) 
